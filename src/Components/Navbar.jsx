@@ -13,9 +13,9 @@ import { TbWorldSearch } from "react-icons/tb";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [openIndex, setOpenIndex] = useState(null);
-  const [showMenu, setShowMenu] = useState(false);
-  const [mobileDropdownIndex, setMobileDropdownIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null); // desktop hover dropdown
+  const [showMenu, setShowMenu] = useState(false); // mobile sidebar
+  const [mobileDropdownIndex, setMobileDropdownIndex] = useState(null); // mobile dropdown
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -44,6 +44,7 @@ export default function Navbar() {
 
   return (
     <div className="flex flex-col items-center relative z-9999">
+      {/* Navbar */}
       <nav
         className={`fixed top-4 w-[95%] md:w-[90%] mx-auto z-9999 flex items-center justify-between px-6 py-3 rounded-2xl border border-white/20 backdrop-blur-lg shadow-[0_8px_20px_rgba(0,255,255,0.1)] transition-all duration-300 ${
           scrolled ? "bg-white/25" : "bg-white/15"
@@ -53,7 +54,7 @@ export default function Navbar() {
           <img src={logo} alt="Logo" className="w-28 md:w-36" />
         </Link>
 
-        {/*  Desktop menu */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 items-center text-gray-800 font-medium relative z-9999">
           {navItems.map((item, idx) => (
             <li
@@ -76,6 +77,7 @@ export default function Navbar() {
                 )}
               </Link>
 
+              {/* Desktop Dropdown (unchanged) */}
               {item.dropdown && (
                 <div
                   className={`absolute left-0 top-full mt-2 w-150 rounded-xl border border-cyan-200/30 p-5 
@@ -107,6 +109,7 @@ export default function Navbar() {
           ))}
         </ul>
 
+        {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
           <button className="px-4 py-1.5 rounded-full bg-linear-to-r from-cyan-400 to-blue-500 text-white text-sm hover:shadow-md transition">
             Try Now
@@ -116,6 +119,7 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Mobile Menu Button */}
         <FiMenu
           onClick={() => setShowMenu(true)}
           className="w-6 h-6 text-gray-700 md:hidden cursor-pointer"
@@ -147,26 +151,34 @@ export default function Navbar() {
         <ul className="flex flex-col items-start gap-4 mt-5 px-6 text-lg font-medium">
           {navItems.map((item, idx) => (
             <React.Fragment key={idx}>
-              <button
-                onClick={() =>
-                  item.dropdown
-                    ? setMobileDropdownIndex(
-                        mobileDropdownIndex === idx ? null : idx
-                      )
-                    : setShowMenu(false)
-                }
-                className="flex items-center justify-between w-full hover:text-cyan-600"
-              >
-                <p>{item.name}</p>
-                {item.dropdown && (
+              {/* Dropdown or direct NavLink */}
+              {item.dropdown ? (
+                <button
+                  onClick={() =>
+                    setMobileDropdownIndex(
+                      mobileDropdownIndex === idx ? null : idx
+                    )
+                  }
+                  className="flex items-center justify-between w-full hover:text-cyan-600"
+                >
+                  <p>{item.name}</p>
                   <FiChevronDown
                     className={`transition-transform ${
                       mobileDropdownIndex === idx ? "rotate-180" : ""
                     }`}
                   />
-                )}
-              </button>
+                </button>
+              ) : (
+                <NavLink
+                  to={item.path}
+                  onClick={() => setShowMenu(false)}
+                  className="flex items-center justify-between w-full hover:text-cyan-600"
+                >
+                  <p>{item.name}</p>
+                </NavLink>
+              )}
 
+              {/* Mobile Dropdown */}
               {item.dropdown && mobileDropdownIndex === idx && (
                 <div className="ml-4 flex flex-col gap-2 mt-2">
                   {item.dropdown.map((drop, dIdx) => (

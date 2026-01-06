@@ -4,6 +4,7 @@ import number from '../assets/247.png'
 import growth from '../assets/growth.png'
 import automated from '../assets/automated.png'
 import { Clock, TrendingUp, Clock3, Network } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Refined = () => {
     return (
@@ -32,9 +33,11 @@ const Refined = () => {
                         <button className="border-2 bg-linear-to-r from-cyan-400 to-blue-500 hover:border-gray-400 text-white px-8 py-3 rounded-full font-medium transition-colors">
                             Learn More
                         </button>
-                        <button className="border-2  bg-linear-to-r from-cyan-400 to-blue-500 hover:border-gray-400 text-white px-8 py-3 rounded-full font-medium transition-colors">
+                        <Link to='/contact'>
+                            <button className="border-2  bg-linear-to-r from-cyan-400 to-blue-500 hover:border-gray-400 text-white px-8 py-3 rounded-full font-medium transition-colors">
                             Contact Us
-                        </button>
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
