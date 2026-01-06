@@ -63,10 +63,10 @@ const FeatureCardsSlider = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent mb-4">
-            Get Started
+            AI Agents 
           </h1>
           <h2 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Quickly and Easily
+            That Work Like Your Best Team Members
           </h2>
         </div>
 

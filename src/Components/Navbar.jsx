@@ -15,6 +15,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+  const [mobileDropdownIndex, setMobileDropdownIndex] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -30,7 +31,7 @@ export default function Navbar() {
         { label: "Web Development", icon: <HiOutlineDesktopComputer />, path: "/services/web" },
         { label: "Search Engine Optimization (SEO)", icon: <TbWorldSearch />, path: "/services/seo" },
         { label: "Brand Establishment & Communication", icon: <FiStar />, path: "/services/brand" },
-                { label: "CRM", icon: <FiBook />, path: "/services/crm" },
+        { label: "CRM", icon: <FiBook />, path: "/services/crm" },
         { label: "Lead Engine System", icon: <FiBook />, path: "/services/graphic" },
         { label: "AI Automation Suite", icon: <FiBook />, path: "/services/marketing" },
         { label: "AI Concierge System", icon: <FiBook />, path: "/services/printing" },
@@ -51,6 +52,8 @@ export default function Navbar() {
         <Link to="/">
           <img src={logo} alt="Logo" className="w-28 md:w-36" />
         </Link>
+
+        {/*  Desktop menu */}
         <ul className="hidden md:flex gap-6 items-center text-gray-800 font-medium relative z-9999">
           {navItems.map((item, idx) => (
             <li
@@ -73,7 +76,6 @@ export default function Navbar() {
                 )}
               </Link>
 
-              
               {item.dropdown && (
                 <div
                   className={`absolute left-0 top-full mt-2 w-150 rounded-xl border border-cyan-200/30 p-5 
@@ -104,6 +106,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
         <div className="hidden md:flex gap-3">
           <button className="px-4 py-1.5 rounded-full bg-linear-to-r from-cyan-400 to-blue-500 text-white text-sm hover:shadow-md transition">
             Try Now
@@ -112,12 +115,14 @@ export default function Navbar() {
             Login
           </button>
         </div>
+
         <FiMenu
           onClick={() => setShowMenu(true)}
           className="w-6 h-6 text-gray-700 md:hidden cursor-pointer"
         />
       </nav>
 
+      {/* Overlay */}
       <div
         className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all duration-300 ${
           showMenu ? "opacity-100 visible" : "opacity-0 invisible"
@@ -125,6 +130,7 @@ export default function Navbar() {
         onClick={() => setShowMenu(false)}
       ></div>
 
+      {/* Mobile Sidebar */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-white z-9999 shadow-lg transform transition-transform duration-300 md:hidden ${
           showMenu ? "translate-x-0" : "translate-x-full"
@@ -141,17 +147,28 @@ export default function Navbar() {
         <ul className="flex flex-col items-start gap-4 mt-5 px-6 text-lg font-medium">
           {navItems.map((item, idx) => (
             <React.Fragment key={idx}>
-              <NavLink
-                to={item.path || "#"}
-                onClick={() => setShowMenu(false)}
+              <button
+                onClick={() =>
+                  item.dropdown
+                    ? setMobileDropdownIndex(
+                        mobileDropdownIndex === idx ? null : idx
+                      )
+                    : setShowMenu(false)
+                }
                 className="flex items-center justify-between w-full hover:text-cyan-600"
               >
                 <p>{item.name}</p>
-                {item.dropdown && <FiChevronDown />}
-              </NavLink>
+                {item.dropdown && (
+                  <FiChevronDown
+                    className={`transition-transform ${
+                      mobileDropdownIndex === idx ? "rotate-180" : ""
+                    }`}
+                  />
+                )}
+              </button>
 
-              {item.dropdown && (
-                <div className="ml-4 flex flex-col gap-2">
+              {item.dropdown && mobileDropdownIndex === idx && (
+                <div className="ml-4 flex flex-col gap-2 mt-2">
                   {item.dropdown.map((drop, dIdx) => (
                     <NavLink
                       key={dIdx}
