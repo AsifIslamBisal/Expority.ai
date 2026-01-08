@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Refined = () => {
     return (
-        <div className="min-h-screen bg-linear-to-br from-white via-cyan-50/30 to-white px-6 py-16 lg:px-20">
+        <div className=" bg-linear-to-br from-white via-cyan-50/30 to-white px-6 py-16 lg:px-20">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
                 {/* Left Content */}
                 <div className="space-y-6">
@@ -30,11 +30,11 @@ const Refined = () => {
                     </p>
 
                     <div className="flex gap-4 pt-4">
-                        <button className="border-2 bg-linear-to-r from-cyan-400 to-blue-500 hover:border-gray-400 text-white px-8 py-3 rounded-full font-medium transition-colors">
+                        <button className="border-2 bg-[#3b82f6] hover:border-gray-400 text-white px-8 py-3 rounded-full font-medium transition-colors">
                             Learn More
                         </button>
                         <Link to='/contact'>
-                            <button className="border-2  bg-linear-to-r from-cyan-400 to-blue-500 hover:border-gray-400 text-white px-8 py-3 rounded-full font-medium transition-colors">
+                            <button className="border-2  bg-[#3b82f6] hover:border-gray-400 text-white px-8 py-3 rounded-full font-medium transition-colors">
                             Contact Us
                             </button>
                         </Link>

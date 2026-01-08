@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
-export default function ContactForm() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -106,7 +106,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-white via-cyan-50/30 py-14 px-4">
+    <div className=" bg-linear-to-br from-white via-cyan-50/30 py-14 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Left Side - Info */}

@@ -15,7 +15,7 @@ const BrandSlider = () => {
             key={index}
             src={logo}
             alt="Brand icon"
-            className="w-24 md:w-28 h-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
+            className="w-24 md:w-56 h-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
           />
         ))}
       </div>

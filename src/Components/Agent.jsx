@@ -61,13 +61,13 @@ const Agent = () => {
           <ProgressBar label="Brand Positioning" value={75} />
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-sm hover:shadow-md transition">
+            <button className="px-4 py-1.5 rounded-full bg-[#3b82f6] text-white text-sm hover:shadow-md transition">
               Execution
             </button>
-            <button className="px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-sm hover:shadow-md transition">
+            <button className="px-4 py-1.5 rounded-full bg-[#3b82f6] text-white text-sm hover:shadow-md transition">
               Analysis
             </button>
-            <button className="px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-sm hover:shadow-md transition">
+            <button className="px-4 py-1.5 rounded-full bg-[#3b82f6] text-white text-sm hover:shadow-md transition">
               Optimization
             </button>
           </div>

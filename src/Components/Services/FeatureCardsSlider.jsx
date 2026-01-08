@@ -58,11 +58,11 @@ const FeatureCardsSlider = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-white via-cyan-50/30 to-white py-16 px-4">
+    <div className=" bg-linear-to-br from-white via-cyan-50/30 to-white py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold bg-linear-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2 leading-tight">
             AI Agents 
           </h1>
           <h2 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
