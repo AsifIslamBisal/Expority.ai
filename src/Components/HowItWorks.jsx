@@ -25,7 +25,7 @@ const HowItWorks = () => {
           <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-300 via-cyan-400 to-blue-500 mb-2 drop-shadow-md">
             How Expority’s AI
           </h1>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-md">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-md leading-tight">
             Automation Engine Works
           </h1>
           <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">

@@ -9,12 +9,18 @@ import Contact from "../Components/Contact";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import HowItWorks from "../Components/HowItWorks";
 import Industries from "../Components/Industries";
+import ScrollToTop from "../ScrollToTop";
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
+    element: (
+      <>
+      <ScrollToTop/>,
+      <MainLayout></MainLayout>,
+      </>
+    ),
     errorElement:<ErrorPage/>,
     children: [
         {
