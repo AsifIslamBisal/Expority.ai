@@ -81,7 +81,7 @@ const FeatureCardsSlider = () => {
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className={`${
-                  isHovered ? 'bg-linear-to-br from-blue-500 via-cyan-400 to-cyan-300' : 'bg-white border border-gray-200'
+                  isHovered ? 'bg-linear-to-br from-blue-500 via-cyan-400 to-cyan-300' : 'bg-white '
                 } rounded-3xl p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105`}
               >
                 {/* Icon */}

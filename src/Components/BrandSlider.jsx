@@ -8,34 +8,38 @@ const BrandSlider = () => {
   const brands = [mortgage, financial, realEstate, electrical];
 
   return (
-    <div className="overflow-hidden bg-white py-8">
-      <div className="flex animate-marquee space-x-16">
+    <div className="relative overflow-hidden bg-linear-to-br from-white via-cyan-50/30 to-white py-10 group">
+      {/* Continuous Scroll Row */}
+      <div className="flex w-max animate-marquee group-hover:paused space-x-16">
         {[...brands, ...brands, ...brands].map((logo, index) => (
           <img
             key={index}
             src={logo}
             alt="Brand icon"
-            className="w-24 md:w-56 h-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
+            className="w-40 md:w-60 h-auto object-contain opacity-90 hover:opacity-100 transition-all duration-300"
           />
         ))}
       </div>
+
+      {/* Fade effect on sides for smooth entry/exit */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-linear-to-l from-white to-transparent"></div>
 
       {/* CSS Animation */}
       <style>
         {`
           @keyframes marquee {
-            0% {
-              transform: translateX(100%);
-            }
-            100% {
-              transform: translateX(-100%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.333%); }
           }
 
           .animate-marquee {
             display: flex;
-            width: max-content;
-            animation: marquee 40s linear infinite;
+            animation: marquee 30s linear infinite;
+          }
+
+          .group:hover .animate-marquee {
+            animation-play-state: paused;
           }
         `}
       </style>

@@ -107,10 +107,10 @@ export default function Contact() {
 
   return (
     <div className=" bg-linear-to-br from-white via-cyan-50/30 py-14 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Left Side - Info */}
-          <div className="space-y-8">
+          <div className="space-y-8 pl-8">
             <div>
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-2">
                 CONTACT US
@@ -150,7 +150,7 @@ export default function Contact() {
           </div>
 
           {/* Right Side - Form */}
-          <div className="bg-white rounded-3xl shadow-2xl p-6 border border-gray-100">
+          <div className="bg-white lg:ml-8 lg:w-xl rounded-3xl shadow-2xl p-6 border border-gray-100">
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -162,7 +162,7 @@ export default function Contact() {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className={`w-full px-4 py-2.5 rounded-xl border ${
+                    className={`w-full px-4 py-3 rounded-xl border ${
                       errors.firstName ? 'border-red-500' : 'border-gray-200'
                     } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all`}
                   />

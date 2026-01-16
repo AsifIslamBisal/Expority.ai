@@ -16,7 +16,6 @@ const Refined = () => {
                         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                             Refined for
                         </h2>
-                        <br />
                         <h2 className="text-4xl lg:text-5xl font-bold">
                             <span className="bg-linear-to-r from-cyan-400 to-blue-500 text-white px-3 py-0.5">
                                 Maximum Impact

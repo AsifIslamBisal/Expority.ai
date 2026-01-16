@@ -21,11 +21,11 @@ const HowItWorks = () => {
           <div className="absolute inset-0 bg-linear-to-b from-white/40 via-white/20 to-white/50"></div>
         </div>
 
-        <div className="relative z-10 max-w-3xl px-6 pb-30">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-300 via-cyan-400 to-blue-500 mb-2 drop-shadow-md">
+        <div className="relative z-10 max-w-4xl px-6 pb-30">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-300 via-cyan-400 to-blue-500 mb-2 drop-shadow-md leading-tight">
             How Expority’s AI
           </h1>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-md leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 mb-6 drop-shadow-md leading-tight">
             Automation Engine Works
           </h1>
           <p className="text-gray-700 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
@@ -37,29 +37,29 @@ const HowItWorks = () => {
 
       {/* ----------- STAGE 01: FRONTIER ----------- */}
       <section className="py-20 px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 mb-14">
+        <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 mb-14 leading-tight">
           Stage 01: Frontier
         </h2>
 
-        <div className="flex flex-col md:flex-row justify-center items-start gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center items-start gap-8 max-w-2xl mx-auto">
           {/* Step 01 */}
-    <div className="group border border-blue-300 rounded-xl p-6 flex-1 transition duration-300 hover:bg-linear-to-br hover:from-cyan-400 hover:to-blue-600">
+    <div className="group border border-blue-300 h-80 pt-10 rounded-xl p-6 flex-1 transition duration-300 hover:bg-linear-to-br hover:from-cyan-400 hover:to-blue-600">
       <h3 className="font-semibold mb-4 text-xl">
-        <span className="block text-blue-600 group-hover:text-white">(Step 01)</span>
-        <span className="block text-blue-600 group-hover:text-white">Lead Generation</span>
+        <span className="block font-bold text-blue-600 group-hover:text-white">(Step 01)</span>
+        <span className="block font-semibold text-blue-600 group-hover:text-white">Lead Generation</span>
       </h3>
       <ul className="space-y-2">
-        <li className="font-semibold text-gray-700 group-hover:text-white">• AI responds instantly across chat, voice, and SMS</li>
-        <li className="font-semibold text-gray-700 group-hover:text-white">• Natural conversation that feels human</li>
-        <li className="font-semibold text-gray-700 group-hover:text-white">• Available 24/7 with zero wait time</li>
+        <li className="font-semibold text-gray-700 group-hover:text-white">• AI responds instantly across chat, voice, and SMS.</li>
+        <li className="font-semibold text-gray-700 group-hover:text-white">• Natural conversation that feels human.</li>
+        <li className="font-semibold text-gray-700 group-hover:text-white">• Available 24/7 with zero wait time.</li>
         
       </ul>
     </div>
 
           {/* Step 02 */}
-          <div className="group border border-blue-300 rounded-xl p-6 flex-1 transition duration-300 hover:bg-linear-to-br hover:from-cyan-400 hover:to-blue-600">
+          <div className="group border border-blue-300 h-80 pt-10 rounded-xl p-6 flex-1 transition duration-300 hover:bg-linear-to-br hover:from-cyan-400 hover:to-blue-600">
       <h3 className="font-semibold mb-4 text-xl">
-        <span className="block font-semibold text-blue-600 group-hover:text-white">(Step 02)</span>
+        <span className="block font-bold text-blue-600 group-hover:text-white">(Step 02)</span>
         <span className="block font-semibold text-blue-600 group-hover:text-white">Lead Qualification</span>
       </h3>
       <ul className="space-y-2">
@@ -74,7 +74,7 @@ const HowItWorks = () => {
 
       {/* ----------- STAGE 02: EXTENSION ----------- */}
       <section className="pt-8 pb-20 px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-600 mb-12 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-600 mb-12 text-center leading-tight">
           Stage 02: Extension
         </h2>
 
@@ -85,7 +85,7 @@ const HowItWorks = () => {
             <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">
               Follow-Up (AI Agent)
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-600 text-sm leading-relaxed w-[340px]">
               <li className="font-semibold ">Persistent multi-channel follow-up sequences</li>
               <li className="font-semibold ">Personalized based on previous interactions</li>
               <li className="font-semibold ">Re-engages cold leads automatically</li>

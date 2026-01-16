@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiMenu,
+  FiX,
+} from "react-icons/fi";
 import logo from "../assets/logo.png";
+import { HiOutlineDesktopComputer } from "react-icons/hi";
+import { TbWorldSearch } from "react-icons/tb";
+import { LuWorkflow } from "react-icons/lu";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  const [openIndex, setOpenIndex] = useState(null); // desktop hover dropdown
+  const [showMenu, setShowMenu] = useState(false); // mobile sidebar
+  const [mobileDropdownIndex, setMobileDropdownIndex] = useState(null); // mobile dropdown
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -16,7 +25,22 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "How It Works", path: "/works" },
-    { name: "Industries", path: "/industries" },
+    {
+      name: "Solutions",
+      dropdown: [
+        { label: "AI Agents", icon: <HiOutlineDesktopComputer />, path: "/Solutions/ai-agent" },
+        { label: "Sales & Revenue Automation", icon: <TbWorldSearch />, path: "/Solutions/automation" },
+        { label: "AI Workflow & Operations", icon: <LuWorkflow />, path: "/Solutions/workflow" },
+      ],
+    },
+    {
+      name: "Industries",
+      dropdown: [
+        { label: "Mortgage", icon: <HiOutlineDesktopComputer />, path: "/industries/mortgage" },
+        { label: "Finance", icon: <TbWorldSearch />, path: "/industries/finance" },
+        { label: "Real Estate", icon: <LuWorkflow />, path: "/industries/real-Estate" },
+      ],
+    },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
@@ -25,7 +49,7 @@ export default function Navbar() {
     <div className="flex flex-col items-center relative z-9999">
       {/* Navbar */}
       <nav
-        className={`fixed top-4 w-[95%] md:w-[90%] mx-auto z-9999 flex items-center justify-between px-6 py-3 rounded-2xl border border-white/20 backdrop-blur-lg shadow-[0_8px_20px_rgba(0,255,255,0.1)] transition-all duration-300 ${
+        className={`fixed top-4 w-[95%] md:w-[70%] mx-auto z-9999 flex items-center justify-between px-6 py-3 rounded-2xl border border-white/20 backdrop-blur-lg shadow-[0_8px_20px_rgba(0,255,255,0.1)] transition-all duration-300 ${
           scrolled ? "bg-white/25" : "bg-white/15"
         }`}
       >
@@ -36,24 +60,62 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 items-center text-gray-800 font-medium relative z-9999">
           {navItems.map((item, idx) => (
-            <li key={idx}>
-              <NavLink
-                to={item.path}
+            <li
+              key={idx}
+              className="relative"
+              onMouseEnter={() => item.dropdown && setOpenIndex(idx)}
+              onMouseLeave={() => setOpenIndex(null)}
+            >
+              <Link
+                to={item.path || "#"}
                 className="flex items-center gap-1 px-2 py-1 rounded-md hover:text-cyan-500 transition"
               >
                 {item.name}
-              </NavLink>
+                {item.dropdown && (
+                  <FiChevronDown
+                    className={`text-xs transition-transform ${
+                      openIndex === idx ? "rotate-180" : ""
+                    }`}
+                  />
+                )}
+              </Link>
+
+              {/* Desktop Dropdown */}
+              {item.dropdown && (
+                <div
+                  className={`absolute left-0 top-full mt-2 w-150 rounded-xl border border-cyan-200/30 p-5 
+                    bg-white/80 backdrop-blur-xl shadow-[0_8px_25px_rgba(0,200,255,0.25)] transition-all duration-300 z-9999
+                    ${
+                      openIndex === idx
+                        ? "opacity-100 visible translate-y-0"
+                        : "opacity-0 invisible -translate-y-2"
+                    }`}
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-rows-3 gap-4">
+                    {item.dropdown.map((drop, dIdx) => (
+                      <Link
+                        key={dIdx}
+                        to={drop.path}
+                        className="group flex items-center gap-3 px-3 py-2 rounded-lg 
+                          text-gray-800 transition-all duration-300 hover:bg-cyan-50 hover:text-cyan-700"
+                      >
+                        <span className="text-lg transition-all group-hover:text-cyan-500">
+                          {drop.icon}
+                        </span>
+                        <span className="text-sm">{drop.label}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </li>
           ))}
         </ul>
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
-          <button className="px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-sm hover:shadow-md transition">
+          <button className="px-4 py-1.5 rounded-full bg-[#3b82f6] text-white text-sm hover:shadow-md transition">
             Try Now
-          </button>
-          <button className="px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm hover:shadow-md transition">
-            Login
           </button>
         </div>
 
@@ -88,14 +150,51 @@ export default function Navbar() {
 
         <ul className="flex flex-col items-start gap-4 mt-5 px-6 text-lg font-medium">
           {navItems.map((item, idx) => (
-            <NavLink
-              key={idx}
-              to={item.path}
-              onClick={() => setShowMenu(false)}
-              className="flex items-center justify-between w-full hover:text-cyan-600"
-            >
-              <p>{item.name}</p>
-            </NavLink>
+            <React.Fragment key={idx}>
+              {/* Dropdown or direct NavLink */}
+              {item.dropdown ? (
+                <button
+                  onClick={() =>
+                    setMobileDropdownIndex(
+                      mobileDropdownIndex === idx ? null : idx
+                    )
+                  }
+                  className="flex items-center justify-between w-full hover:text-cyan-600"
+                >
+                  <p>{item.name}</p>
+                  <FiChevronDown
+                    className={`transition-transform ${
+                      mobileDropdownIndex === idx ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              ) : (
+                <NavLink
+                  to={item.path}
+                  onClick={() => setShowMenu(false)}
+                  className="flex items-center justify-between w-full hover:text-cyan-600"
+                >
+                  <p>{item.name}</p>
+                </NavLink>
+              )}
+
+              {/* Mobile Dropdown */}
+              {item.dropdown && mobileDropdownIndex === idx && (
+                <div className="ml-4 flex flex-col gap-2 mt-2">
+                  {item.dropdown.map((drop, dIdx) => (
+                    <NavLink
+                      key={dIdx}
+                      to={drop.path}
+                      onClick={() => setShowMenu(false)}
+                      className="flex items-center gap-2 text-gray-700 hover:text-cyan-500 transition"
+                    >
+                      <span className="text-base">{drop.icon}</span>
+                      <span className="text-sm">{drop.label}</span>
+                    </NavLink>
+                  ))}
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </ul>
       </div>
