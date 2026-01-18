@@ -25,7 +25,7 @@ const Mortgage = () => {
 
     return (
         <section>
-            <div className="min-h-screen bg-[#F8FAFC] p-8 md:p-16 font-sans overflow-hidden">
+            <div className="min-h-screen bg-linear-to-br from-white via-cyan-50/30 to-white p-8 md:p-16 font-sans overflow-hidden">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                 {/* Left Content Column */}
@@ -212,7 +212,7 @@ const Mortgage = () => {
 
   </div>
 </section>
-<section className="bg-[#f8fbff] py-20 px-8 md:px-24 font-sans text-gray-900 min-h-screen flex items-center">
+<section className="bg-linear-to-br from-white via-cyan-50/30 to-white py-20 px-8 md:px-24 font-sans text-gray-900 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Content Side */}
@@ -261,7 +261,7 @@ const Mortgage = () => {
 
       </div>
     </section>
-    <section className="bg-white py-20 px-8 md:px-24 font-sans text-gray-900">
+    <section className="bg-linear-to-br from-white via-cyan-50/30 to-white py-20 px-8 md:px-24 font-sans text-gray-900">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         <div className="relative overflow-hidden rounded-[60px] shadow-xl aspect-square lg:aspect-auto lg:h-[600px]">
@@ -317,7 +317,7 @@ const Mortgage = () => {
 
       </div>
     </section>
-    <section className="bg-white py-24 px-8 md:px-24 font-sans text-gray-900 flex flex-col items-center text-center">
+    <section className="bg-linear-to-br from-white via-cyan-50/30 to-white py-24 px-8 md:px-24 font-sans text-gray-900 flex flex-col items-center text-center">
       <div className="max-w-4xl mx-auto flex flex-col items-center">
         
         

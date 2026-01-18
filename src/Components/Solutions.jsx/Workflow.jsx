@@ -61,7 +61,7 @@ const Workflow = () => {
         <div>
             <BrandSlider/>
         </div>
-        <div className="bg-slate-50 py-20 px-10 min-h-screen">
+        <div className="bg-linear-to-br from-white via-cyan-50/30 to-white py-20 px-10 min-h-screen">
             {/* Header Section */}
             <div className='text-center mb-16'>
                 <h1 className='text-5xl font-bold text-slate-800'>Workflow Features</h1>
