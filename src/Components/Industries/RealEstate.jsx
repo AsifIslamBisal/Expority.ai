@@ -112,8 +112,6 @@ const RealEstate = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Image 2 */}
                         <img
                             src={image2}
                             alt="Professional"
@@ -264,36 +262,18 @@ const RealEstate = () => {
     <section className="bg-white py-20 px-8 md:px-24 font-sans text-gray-900">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        {/* Left Side: Media (Video/Image) */}
-        <div className="relative group overflow-hidden rounded-[60px] shadow-xl aspect-square lg:aspect-auto lg:h-[600px]">
-          {isVideo ? (
-            /* --- Video Option --- */
-            <video 
-              controls 
-              className="w-full h-full object-cover"
-              poster="path-to-your-poster-image.jpg"
-            >
-              <source src="your-video-file.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ) : (
-            /* --- Image Option --- */
-            <>
-              <img 
-                src={image6} 
-                alt="Meeting" 
-                className="w-full h-full object-cover"
-              />
-              {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-                  <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-2"></div>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-
+       <div className="relative overflow-hidden rounded-[60px] shadow-xl aspect-square lg:aspect-auto lg:h-[600px]">
+  <video 
+    autoPlay 
+    muted 
+    loop 
+    playsInline
+    className="w-full h-full object-cover"
+    poster="path-to-your-poster-image.jpg"
+  >
+    <source src={AgentClientVideo} type="video/mp4" />
+  </video>
+</div>
         {/* Right Side: Content */}
         <div className="flex flex-col space-y-8">
           <div>

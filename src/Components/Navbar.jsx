@@ -49,7 +49,7 @@ export default function Navbar() {
     <div className="flex flex-col items-center relative z-9999">
       {/* Navbar */}
       <nav
-        className={`fixed top-4 w-[95%] md:w-[70%] mx-auto z-9999 flex items-center justify-between px-6 py-3 rounded-2xl border border-white/20 backdrop-blur-lg shadow-[0_8px_20px_rgba(0,255,255,0.1)] transition-all duration-300 ${
+        className={`fixed top-4 w-[95%] md:w-[80%] mx-auto z-9999 flex items-center justify-between px-6 py-3 rounded-2xl border border-white/20 backdrop-blur-lg shadow-[0_8px_20px_rgba(0,255,255,0.1)] transition-all duration-300 ${
           scrolled ? "bg-white/25" : "bg-white/15"
         }`}
       >
