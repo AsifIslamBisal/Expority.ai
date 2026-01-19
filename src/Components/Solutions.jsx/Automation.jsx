@@ -36,7 +36,7 @@ const Automation = () => {
     <section className='bg-linear-to-br from-white via-cyan-50/30 to-white'>
       <section className='mt-20 relative'>
         {/* Circle Background */}
-        <div className="absolute flex items-center justify-center inset-0 z-0 scale-75 md:scale-100">
+        <div className="absolute flex items-center justify-center inset-0 z-0 scale-75 md:scale-100 circle-mask">
           <div className="flex h-80 w-80 sm:h-120 sm:w-120 md:h-160 md:w-160 items-center justify-center rounded-full border-2 border-gray-200">
             <div className="flex h-64 w-64 sm:h-100 sm:w-100 md:h-140 md:w-140 items-center justify-center rounded-full border-2 border-gray-200">
               <div className="flex h-52 w-52 sm:h-80 sm:w-80 md:h-120 md:w-120 items-center justify-center rounded-full border-2 border-gray-200">
@@ -45,13 +45,16 @@ const Automation = () => {
             </div>
           </div>
         </div>
+{/* Phone → Circle Fade Bridge */}
+<div className="absolute inset-0 z-10 pointer-events-none phone-fade-bridge" />
+        <div className="absolute inset-0 z-10 pointer-events-none fade-bridge" />
 
         {/* Main Content */}
         <div className='flex flex-col md:flex-row relative items-center justify-evenly z-10 space-y-10 md:space-y-0'>
           {/* Left Section */}
           <div className='flex items-center gap-3 sm:gap-5'>
             <div>
-              <img className='w-16 sm:w-24 md:w-30' src={aiHand} alt="" />
+              <img className=' w-16 sm:w-24 md:w-30 ' src={aiHand} alt="" />
             </div>
             <div className='space-y-2 sm:space-y-4 text-center md:text-left'>
               <p className='text-blue-600 font-semibold text-sm sm:text-base'>Lead<br />Generation</p>
@@ -62,11 +65,15 @@ const Automation = () => {
           {/* Center Section */}
           <div className='flex flex-col sm:flex-row items-center mt-4 md:mt-8'>
             <div>
-              <img className='w-48 sm:w-72 md:w-110' src={smartPhone} alt="" />
+              <img className='w-48 sm:w-72 md:w-110 relative z-20 hand-fade' src={smartPhone} alt="" />
             </div>
+            
             <div className='flex items-center mb-6 sm:mb-12 md:mb-50'>
+              <div className="absolute inset-0 pointer-events-none"></div>
               <div>
-                <img className='w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full' src={image1} alt="" />
+                <img className=" -top-6 -right-8 
+                 w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 
+                 rounded-full shadow-lg" src={image1} alt="" />
               </div>
               <div className='space-y-4 ml-4 sm:space-y-10 sm:ml-8 md:space-y-15 md:ml-10'>
                 <img className='w-8 h-8 sm:w-12 sm:h-12 md:w-15 md:h-15 rounded-full' src={image2} alt="" />
@@ -122,56 +129,58 @@ const Automation = () => {
         <BrandSlider />
       </div>
 
-      {/* Card Section */}
-      <div className="bg-linear-to-br from-white via-cyan-50/30 to-white py-10 sm:py-16 px-4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 text-gray-800">
-          Sales Automations
-        </h1>
+      <section>
+  {/* Card Section */}
+  <div className="bg-linear-to-br from-white via-cyan-50/30 to-white py-10 sm:py-16 px-4">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 sm:mb-16 text-gray-800">
+      Sales Automations
+    </h1>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 max-w-7xl mx-auto">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className={`
-                rounded-3xl w-72 sm:w-80 p-6 sm:p-10 shadow-xl transition-all duration-500 group
-                ${card.isCenter
-                  ? 'bg-white hover:scale-105 sm:hover:scale-110 hover:bg-blue-600 hover:shadow-2xl z-10'
-                  : 'bg-white hover:shadow-2xl'
-                }
-              `}
-              style={{
-                minHeight: '440px',
-              }}
-            >
-              <h2 className={`text-xl sm:text-2xl font-bold text-center mb-5 transition-colors duration-500 ${card.isCenter ? 'text-gray-800 group-hover:text-white' : 'text-gray-800'}`}>
-                {card.title}
-              </h2>
+    <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 max-w-7xl mx-auto">
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="relative bg-white rounded-3xl w-72 sm:w-80 p-6 sm:p-10 shadow-xl transition-all duration-500 group hover:scale-105 sm:hover:scale-110 hover:bg-blue-600 hover:shadow-2xl z-10 flex flex-col"
+          style={{
+            minHeight: '480px', // বাটন আসার জন্য একটু জায়গা বাড়ানো হয়েছে
+          }}
+        >
+          {/* Card Title */}
+          <h2 className="text-xl sm:text-2xl font-bold text-center mb-5 transition-colors duration-500 text-gray-800 group-hover:text-white">
+            {card.title}
+          </h2>
 
-              <p className={`text-center mb-6 leading-relaxed text-xs sm:text-sm transition-colors duration-500 ${card.isCenter ? 'text-gray-600 group-hover:text-white' : 'text-gray-600'}`}>
-                {card.description}
-              </p>
+          {/* Card Description */}
+          <p className="text-center mb-6 leading-relaxed text-xs sm:text-sm transition-colors duration-500 text-gray-600 group-hover:text-white">
+            {card.description}
+          </p>
 
-              <ul className="mb-8 space-y-3">
-                {card.bullets.map((bullet, i) => (
-                  <li
-                    key={i}
-                    className={`flex items-center text-sm transition-colors duration-500 ${card.isCenter ? 'text-gray-600 group-hover:text-white' : 'text-gray-600'}`}
-                  >
-                    <span className={`mr-3 transition-colors duration-500 ${card.isCenter ? 'text-gray-400 group-hover:text-white/80' : 'text-gray-400'}`}>✓</span>
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
+          {/* Bullet Points */}
+          <ul className="mb-8 space-y-3 flex-grow">
+            {card.bullets.map((bullet, i) => (
+              <li
+                key={i}
+                className="flex items-center text-sm transition-colors duration-500 text-gray-600 group-hover:text-white"
+              >
+                <span className="mr-3 transition-colors duration-500 text-gray-400 group-hover:text-white/80">
+                  ✓
+                </span>
+                {bullet}
+              </li>
+            ))}
+          </ul>
 
-              {card.isCenter && (
-                <button className="w-full bg-blue-600 group-hover:bg-white text-white group-hover:text-blue-600 font-semibold py-3 sm:py-4 rounded-full transition-all duration-500 hover:shadow-lg text-sm sm:text-base">
-                  Get Started
-                </button>
-              )}
-            </div>
-          ))}
+          {/* Animated Button: Hovers from bottom */}
+          <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
+            <button className="w-full bg-blue-600 group-hover:bg-white text-white group-hover:text-blue-600 font-semibold py-3 sm:py-4 rounded-full transition-all duration-300 hover:shadow-lg text-sm sm:text-base">
+              Get Started
+            </button>
+          </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</section>
     </section>
   );
 };

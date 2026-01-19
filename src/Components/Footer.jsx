@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-12 border-b border-gray-200">
           
           {/* Logo and Description */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 space-y-2">
             <div className="w-40">
                 <img src={logo} alt="" />
             </div>
@@ -121,7 +121,7 @@ const Footer = () => {
           </div>
 
           <div className="text-sm text-gray-600 flex gap-4">
-            <span className="hover:text-cyan-600 cursor-pointer transition-colors">Privacy Policy</span>
+            <a href="/privacy-policy"><span className="hover:text-cyan-600 cursor-pointer transition-colors">Privacy Policy</span></a>
             <span>•</span>
             <span className="hover:text-cyan-600 cursor-pointer transition-colors">Terms of Service</span>
             <span>•</span>

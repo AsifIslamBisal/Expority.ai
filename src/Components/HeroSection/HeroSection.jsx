@@ -32,12 +32,12 @@ const HeroSection = () => {
           </div>
 
           {/* Stats */}
-          <div className="space-y-6 mt-6">
+          <div className=" hidden sm:block space-y-6 mt-6">
             {[
               { label: "Qualified Lead", value: "78%" },
               { label: "Reach", value: "1M+" },
             ].map((item) => (
-              <div key={item.label} className="flex items-baseline gap-3 justify-center lg:justify-start">
+              <div key={item.label} className="flex items-baseline gap-3 justify-center lg:justify-start ">
                 <div className="w-2 h-2 rounded-full bg-gray-800 mt-2"></div>
                 <div>
                   <p className="text-xs text-gray-500 mb-1 uppercase tracking-wider">{item.label}</p>
@@ -75,14 +75,21 @@ const HeroSection = () => {
           </div>
         </div>
 
-       {/* Right Section */}
+{/* Right Section */}
 <div className="lg:col-span-4 space-y-8 text-center lg:text-left pb-5 lg:-ml-10 mt-4 sm:mt-6 lg:-mt-36">
   <div>
-    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight 
-                   bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent 
-                   inline-block">
-      <span className="block whitespace-nowrap">Turns Conversations</span>
-      <span className="block whitespace-nowrap">Into Revenue</span>
+    <h1
+      className="font-bold leading-snug 
+                 bg-linear-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent 
+                 inline-block mx-auto lg:mx-0"
+      style={{ fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)", maxWidth: "fit-content" }}
+    >
+      <span className="block whitespace-nowrap">
+        Turns Conversations
+      </span>
+      <span className="block whitespace-nowrap">
+        Into Revenue
+      </span>
     </h1>
 
     <p className="mt-4 text-sm text-gray-500 leading-relaxed max-w-sm mx-auto lg:ml-20 lg:mx-0">
@@ -90,6 +97,7 @@ const HeroSection = () => {
     </p>
   </div>
 </div>
+
 
 
       </div>

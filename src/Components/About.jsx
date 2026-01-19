@@ -21,7 +21,7 @@ const About = () => {
       <div className="relative w-full max-w-[1600px] h-full mx-auto px-6 md:px-10">
         
         {/* Robot Image - ডেস্কটপে আপনার আগের সাইজেই থাকবে */}
-        <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center items-end h-[70%] md:h-[85%]">
+        <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center items-end h-[70%] md:h-[75%]">
           <img 
             src={robot} 
             alt="Robot" 
@@ -130,7 +130,7 @@ const About = () => {
       </div>
     </section>
     <section>
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-6 py-16">
+        <div className="min-h-screen bg-linear-to-br from-white via-cyan-50/30 to-white px-6 py-16">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-16">

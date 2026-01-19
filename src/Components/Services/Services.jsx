@@ -32,11 +32,11 @@ const Services = () => {
       {/* Cards Grid */}
       <div className="max-w-7xl mx-auto px-6">
         {/* Top 4 cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
           {items.slice(0, 4).map((item, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl shadow-md flex items-center space-x-4 px-8 h-36 overflow-hidden transition-all duration-300 hover:shadow-xl"
+              className="group relative bg-white rounded-2xl px-8 shadow-md flex items-center space-x-4 h-36 w-72 overflow-hidden transition-all duration-300 hover:shadow-xl"
             >
               <div className="p-4 bg-blue-100 rounded-xl text-blue-600 text-3xl transition-all duration-300 group-hover:bg-linear-to-br group-hover:from-blue-400 group-hover:via-blue-300 group-hover:to-transparent group-hover:text-white group-hover:rotate-6 group-hover:translate-x-2">
                 {item.icon}
@@ -54,7 +54,7 @@ const Services = () => {
           {items.slice(4).map((item, index) => (
             <div
               key={index + 4}
-              className="group relative bg-white rounded-2xl shadow-md flex items-center space-x-4 px-8 h-36 overflow-hidden transition-all duration-300 hover:shadow-xl"
+              className="group relative bg-white rounded-2xl px-8 shadow-md flex items-center space-x-4 h-36 w-72 overflow-hidden transition-all duration-300 hover:shadow-xl"
             >
               <div className="p-4 bg-blue-100 rounded-xl text-blue-600 text-3xl transition-all duration-300 group-hover:bg-linear-to-br group-hover:from-blue-400 group-hover:via-blue-300 group-hover:to-transparent group-hover:text-white group-hover:rotate-6 group-hover:translate-x-2">
                 {item.icon}

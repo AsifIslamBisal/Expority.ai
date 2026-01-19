@@ -69,56 +69,68 @@ const FeatureCardsSlider = () => {
             That Work Like Your Best Team Members
           </h2>
         </div>
+{/* Cards Container */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4 sm:px-0">
+  {getVisibleCards().map((feature, index) => {
+    const isHovered = hoveredCard === index;
 
-        {/* Cards Container */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {getVisibleCards().map((feature, index) => {
-            const isHovered = hoveredCard === index;
-            
-            return (
-              <div
-                key={index}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-                className={`${
-                  isHovered ? 'bg-linear-to-br from-blue-500 via-cyan-400 to-cyan-300' : 'bg-white '
-                } rounded-3xl p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105`}
-              >
-                {/* Icon */}
-                <div className={`${
-                  isHovered ? 'bg-white' : 'bg-blue-100'
-                } w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transition-all duration-300`}>
-                  <div className={isHovered ? 'text-cyan-400' : 'text-blue-600'}>
-                    {feature.icon}
-                  </div>
-                </div>
-
-                {/* Title */}
-                <h3 className={`text-xl font-semibold mb-4 text-center transition-colors duration-300 ${
-                  isHovered ? 'text-gray-900' : 'text-gray-800'
-                }`}>
-                  {feature.title}
-                </h3>
-
-                {/* Description */}
-                <p className={`text-sm mb-6 text-center leading-relaxed transition-colors duration-300 ${
-                  isHovered ? 'text-gray-800' : 'text-gray-600'
-                }`}>
-                  {feature.description}
-                </p>
-
-                {/* CTA Button */}
-                <div className="text-center">
-                  <button className={`${
-                    isHovered ? 'text-gray-900 hover:text-gray-700' : 'text-blue-600 hover:text-blue-700'
-                  } font-medium text-sm transition-colors`}>
-                    {feature.cta} →
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+    return (
+      <div
+        key={index}
+        onMouseEnter={() => setHoveredCard(index)}
+        onMouseLeave={() => setHoveredCard(null)}
+        className={`${
+          isHovered
+            ? 'bg-gradient-to-br from-blue-500 via-cyan-400 to-cyan-300'
+            : 'bg-white'
+        } rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-md sm:shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105`}
+      >
+        {/* Icon */}
+        <div
+          className={`${
+            isHovered ? 'bg-white' : 'bg-blue-100'
+          } w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-4 sm:mb-6 mx-auto transition-all duration-300`}
+        >
+          <div className={isHovered ? 'text-cyan-400' : 'text-blue-600'}>
+            {feature.icon}
+          </div>
         </div>
+
+        {/* Title */}
+        <h3
+          className={`text-lg sm:text-xl font-semibold mb-2 sm:mb-4 text-center transition-colors duration-300 ${
+            isHovered ? 'text-gray-900' : 'text-gray-800'
+          }`}
+        >
+          {feature.title}
+        </h3>
+
+        {/* Description */}
+        <p
+          className={`text-xs sm:text-sm mb-4 sm:mb-6 text-center leading-relaxed transition-colors duration-300 ${
+            isHovered ? 'text-gray-800' : 'text-gray-600'
+          }`}
+        >
+          {feature.description}
+        </p>
+
+        {/* CTA Button */}
+        <div className="text-center">
+          <button
+            className={`${
+              isHovered
+                ? 'text-gray-900 hover:text-gray-700'
+                : 'text-blue-600 hover:text-blue-700'
+            } font-medium text-xs sm:text-sm transition-colors`}
+          >
+            {feature.cta} →
+          </button>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
 
         {/* Navigation Dots */}
         <div className="flex justify-center gap-3">

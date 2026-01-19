@@ -12,16 +12,17 @@ const Refined = () => {
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
                 {/* Left Content */}
                 <div className="space-y-6">
-                    <div>
-                        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
-                            Refined for
-                        </h2>
-                        <h2 className="text-4xl lg:text-5xl font-bold">
-                            <span className="bg-linear-to-r from-cyan-400 to-blue-500 text-white px-3 py-0.5">
-                                Maximum Impact
-                            </span>
-                        </h2>
-                    </div>
+                    <div className="text-left">
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-1 sm:mb-2 leading-tight sm:leading-snug">
+    Refined for
+  </h2>
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight sm:leading-snug">
+    <span className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-2 sm:px-3 py-1 rounded-md inline-block">
+      Maximum Impact
+    </span>
+  </h2>
+</div>
+
                     
                     <p className="text-gray-600 text-base leading-relaxed max-w-md">
                         as opposed to using 'Content here, content here', making it look like readable 

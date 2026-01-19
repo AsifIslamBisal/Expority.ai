@@ -13,6 +13,7 @@ export default function Contact() {
   
   const [status, setStatus] = useState('');
   const [errors, setErrors] = useState({});
+  const [smsConsent, setSmsConsent] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -79,7 +80,8 @@ export default function Contact() {
           phone: formData.phone,
           location: formData.location,
           message: formData.message || 'No message provided',
-          subject: 'New Contact Form Submission'
+          subject: 'New Contact Form Submission',
+          sms_consent: smsConsent ? 'Yes' : 'No'
         })
       });
       
@@ -259,24 +261,45 @@ export default function Contact() {
                   className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
                 ></textarea>
               </div>
-
-              <button
-                onClick={handleSubmit}
-                disabled={status === 'sending'}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              >
-                {status === 'sending' ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    Submit
-                    <Send className="w-4 h-4" />
-                  </>
-                )}
-              </button>
+               <div className="flex items-start gap-3 bg-gray-50 p-4 rounded-xl border border-gray-200">
+  <input
+    type="checkbox"
+    id="smsConsent"
+    checked={smsConsent}
+    onChange={(e) => setSmsConsent(e.target.checked)}
+    className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+  />
+  <label htmlFor="smsConsent" className="text-sm text-gray-600 leading-relaxed">
+    I agree to receive SMS messages from <span className="font-semibold">Expority AI</span>.
+    <br />
+    Msg &amp; data rates may apply. Reply <span className="font-semibold">STOP</span> to unsubscribe.
+  </label>
+</div><button
+  onClick={handleSubmit}
+  disabled={status === 'sending' || !smsConsent}
+  className={`
+    w-full px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2
+    transition-all duration-300 shadow-lg
+    ${
+      smsConsent
+        ? 'bg-blue-600 hover:bg-blue-700 text-white hover:shadow-xl hover:-translate-y-0.5'
+        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+    }
+    disabled:opacity-50
+  `}
+>
+  {status === 'sending' ? (
+    <>
+      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+      Sending...
+    </>
+  ) : (
+    <>
+      Submit
+      <Send className="w-4 h-4" />
+    </>
+  )}
+</button>
 
               {status === 'success' && (
                 <div className="flex items-center gap-3 text-green-700 bg-green-50 px-4 py-3 rounded-xl border border-green-200">

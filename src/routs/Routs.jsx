@@ -15,6 +15,7 @@ import Workflow from "../Components/Solutions.jsx/Workflow";
 import Mortgage from "../Components/Industries/Mortgage";
 import Finance from "../Components/Industries/Finance";
 import RealEstate from "../Components/Industries/RealEstate";
+import PrivacyPolicy from "../Components/PrivacyPolicy";
 
 
 export const router = createBrowserRouter([
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
         {
             path: '/contact',
             element:<Contact/>,
+        },
+        {
+            path: '/privacy-policy',
+            element: <PrivacyPolicy/>,
         },
         
     ]

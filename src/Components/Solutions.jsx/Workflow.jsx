@@ -29,11 +29,19 @@ const Workflow = () => {
             
             
             <div className="w-full lg:w-3/5 z-10">
-                <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-                    <span className="text-[#00C2FF]">Automate</span> <span className="text-[#4D7CFF]">the Work That</span>
-                    <br />
-                    <span className="text-[#4D7CFF]">Slows You Down</span>
-                </h1>
+                <h1 className="text-3xl md:text-5xl leading-tight">
+    {/* Automate - এটি বোল্ড এবং সলিড কালার */}
+    <span className="font-bold text-[#00C2FF]">
+        Automate
+    </span>
+    
+    {/* "the Work That" থেকে "Slows You Down" পর্যন্ত কন্টিনিউয়াস গ্রাডিয়েন্ট */}
+    <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#00C2FF] via-[#4D7CFF] to-[#4D7CFF]">
+        {" "}the Work That
+        <br />
+        Slows You Down
+    </span>
+</h1>
                 
                 <div className="mt-8">
                     <p className="text-gray-500 text-xl max-w-lg leading-relaxed">
@@ -48,7 +56,7 @@ const Workflow = () => {
             </div>
 
             
-            <div className="absolute right-0 bottom-[0px] lg:bottom-[50px] w-full lg:w-1/2 flex justify-end pointer-events-none"> 
+            <div className="absolute right-[8%] md:right-[-10%] lg:right-0 bottom-[0px] lg:bottom-[50px] w-full lg:w-1/2 flex justify-end pointer-events-none"> 
                 <img 
                     src={Ai} 
                     alt="AI Robot" 

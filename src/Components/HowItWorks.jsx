@@ -77,64 +77,70 @@ const HowItWorks = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-600 mb-12 text-center leading-tight">
           Stage 02: Extension
         </h2>
+<div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-stretch text-left pl-6 pr-6 md:pl-10">
+  {/* Column 1 */}
+  <div className="flex-1 flex flex-col items-start">
+    <img src={userIcon} alt="Follow-Up" className="w-10 mb-3" />
+    <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">
+      Follow-Up (AI Agent)
+    </h3>
+    <ul className="text-gray-600 text-sm leading-relaxed w-[300px] list-disc pl-5 space-y-1">
+      <li className="font-semibold">Persistent multi-channel follow-up sequences</li>
+      <li className="font-semibold">Personalized based on previous interactions</li>
+      <li className="font-semibold">Re-engages cold leads automatically</li>
+    </ul>
+    <div className="mt-auto pt-4">
+      <button className="flex items-center justify-start font-medium gap-1 text-gray-700 hover:text-blue-600 transition">
+        Read More <IoArrowForwardCircle className="text-xl" />
+      </button>
+    </div>
+  </div>
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start text-center md:text-left pl-10">
-          {/* Column 1 */}
-          <div className="flex-1 flex flex-col items-center md:items-start">
-            <img src={userIcon} alt="Follow-Up" className="w-10 mb-3" />
-            <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">
-              Follow-Up (AI Agent)
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed w-[340px]">
-              <li className="font-semibold ">Persistent multi-channel follow-up sequences</li>
-              <li className="font-semibold ">Personalized based on previous interactions</li>
-              <li className="font-semibold ">Re-engages cold leads automatically</li>
-            </p>
-            <button className="flex items-center justify-center md:justify-start font-medium gap-1 mt-3 text-gray-700 hover:text-blue-600 transition">
-              Read More <IoArrowForwardCircle className="text-xl" />
-            </button>
-          </div>
+  {/* Divider */}
+  <div className="hidden md:block w-0.5 bg-gray-300 h-62 mx-10"></div>
+  <div className="block md:hidden border-t border-gray-300 my-6 w-full"></div>
 
-          {/* Divider */}
-          <div className="hidden md:block w-px bg-gray-300 h-48 mx-16"></div>
-          <br className="md:hidden border-t border-gray-300 my-6" />
+  {/* Column 2 */}
+  <div className="flex-1 flex flex-col items-start">
+    <img src={bookingIcon} alt="Booking" className="w-10 mb-3" />
+    <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">
+      Booking (AI Agent)
+    </h3>
+    <ul className="text-gray-600 text-sm leading-relaxed max-w-xs list-disc pl-5 space-y-1">
+      <li className="font-semibold">Real-time calendar availability</li>
+      <li className="font-semibold">Automatic time zone handling</li>
+      <li className="font-semibold">Confirmation and reminder sequences</li>
+    </ul>
+    <div className="mt-auto pt-4">
+      <button className="flex items-center justify-start font-medium gap-1 text-gray-700 hover:text-blue-600 transition">
+        Read More <IoArrowForwardCircle className="text-xl" />
+      </button>
+    </div>
+  </div>
 
-          {/* Column 2 */}
-          <div className="flex-1 flex flex-col items-center md:items-start">
-            <img src={bookingIcon} alt="Booking" className="w-10 mb-3" />
-            <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">
-              Booking (AI Agent)
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
-              <li className="font-semibold ">Real-time calendar availability</li>
-              <li className="font-semibold ">Automatic time zone handling</li>
-              <li className="font-semibold ">Confirmation and reminder sequences</li>
-            </p>
-            <button className="flex items-center justify-center md:justify-start font-medium gap-1 mt-3 text-gray-700 hover:text-blue-600 transition">
-              Read More <IoArrowForwardCircle className="text-xl" />
-            </button>
-          </div>
+  {/* Divider */}
+  <div className="hidden md:block w-0.5 bg-gray-300 h-62 mx-10"></div>
+  <div className="block md:hidden border-t border-gray-300 my-6 w-full"></div>
 
-          {/* Divider */}
-          <div className="hidden md:block w-px bg-gray-300 h-48 mx-16"></div>
-          <br className="md:hidden border-t border-gray-300 my-6" />
+  {/* Column 3 */}
+  <div className="flex-1 flex flex-col items-start">
+    <img src={automationIcon} alt="Automation" className="w-10 mb-3" />
+    <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">
+      Automation & Reporting
+    </h3>
+    <ul className="text-gray-600 text-sm leading-relaxed max-w-xs list-disc pl-5 space-y-1">
+      <li className="font-semibold">CRM auto-sync for all interactions</li>
+      <li className="font-semibold">Real-time analytics dashboard</li>
+      <li className="font-semibold">ROI tracking and optimization insights</li>
+    </ul>
+    <div className="mt-auto pt-4">
+      <button className="flex items-center justify-start font-medium gap-1 text-gray-700 hover:text-blue-600 transition">
+        Read More <IoArrowForwardCircle className="text-xl" />
+      </button>
+    </div>
+  </div>
+</div>
 
-          {/* Column 3 */}
-          <div className="flex-1 flex flex-col items-center md:items-start">
-            <img src={automationIcon} alt="Automation" className="w-10 mb-3" />
-            <h3 className="font-semibold text-gray-900 mb-2 text-base md:text-lg">
-              Automation & Reporting
-            </h3>
-            <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
-              <li className="font-semibold ">CRM auto-sync for all interactions</li>
-              <li className="font-semibold ">Real-time analytics dashboard</li>
-              <li className="font-semibold ">ROI tracking and optimization insights</li>
-            </p>
-            <button className="flex items-center justify-center md:justify-start font-medium gap-1 mt-3 text-gray-700 hover:text-blue-600 transition">
-              Read More <IoArrowForwardCircle className="text-xl" />
-            </button>
-          </div>
-        </div>
       </section>
       <Contact/>
     </div>
