@@ -14,45 +14,31 @@ const Automation = () => {
   const cards = [
     {
       title: "AI Lead Qualification",
-      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-      bullets: ["Bullet Point", "Bullet Point", "Bullet Point", "Bullet Point"],
+      description: "Our AI system automatically captures and evaluates leads, identifying high-potential prospects so your team can focus on closing deals efficiently.",
+      bullets: ["Auto-qualifies leads", "Filters high-intent prospects", "Collects key client details", "Syncs with your CRM instantly"],
       isCenter: false
     },
     {
       title: "AI Appointment Booking",
-      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-      bullets: ["Bullet Point", "Bullet Point", "Bullet Point"],
+      description: "Our AI automates timely follow-ups with leads, maintaining human-like engagement to nurture prospects and boost conversions.",
+      bullets: ["Instant scheduling", "Syncs with your calendar", "Automated reminders", "Reduces no-shows"],
       isCenter: true
     },
     {
       title: "AI Sales Follow-Up",
-      description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-      bullets: ["Bullet Point", "Bullet Point", "Bullet Point", "Bullet Point"],
+      description: "Our AI handles scheduling instantly, syncing calendars and sending reminders to ensure appointments are never missed.",
+      bullets: ["Automates follow-ups", "Human-like engagement", "Nurtures leads consistently", "Increases conversion rates"],
       isCenter: false
     }
   ];
 
   return (
     <section className='bg-linear-to-br from-white via-cyan-50/30 to-white'>
-      <section className='mt-20 relative'>
-        {/* Circle Background */}
-        <div className="absolute flex items-center justify-center inset-0 z-0 scale-75 md:scale-100 circle-mask">
-          <div className="flex h-80 w-80 sm:h-120 sm:w-120 md:h-160 md:w-160 items-center justify-center rounded-full border-2 border-gray-200">
-            <div className="flex h-64 w-64 sm:h-100 sm:w-100 md:h-140 md:w-140 items-center justify-center rounded-full border-2 border-gray-200">
-              <div className="flex h-52 w-52 sm:h-80 sm:w-80 md:h-120 md:w-120 items-center justify-center rounded-full border-2 border-gray-200">
-                <div className="flex h-40 w-40 sm:h-64 sm:w-64 md:h-100 md:w-100 items-center justify-center rounded-full border-2 border-gray-200"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-{/* Phone → Circle Fade Bridge */}
-<div className="absolute inset-0 z-10 pointer-events-none phone-fade-bridge" />
-        <div className="absolute inset-0 z-10 pointer-events-none fade-bridge" />
-
+      <section className=' relative mt-20 md:-mt-12'>
         {/* Main Content */}
-        <div className='flex flex-col md:flex-row relative items-center justify-evenly z-10 space-y-10 md:space-y-0'>
+        <div className='flex flex-col md:flex-row relative items-center justify-evenly space-y-12 md:space-y-0'>
           {/* Left Section */}
-          <div className='flex items-center gap-3 sm:gap-5'>
+          <div className='flex items-center  gap-3 sm:gap-5'>
             <div>
               <img className=' w-16 sm:w-24 md:w-30 ' src={aiHand} alt="" />
             </div>
@@ -61,26 +47,21 @@ const Automation = () => {
               <p className='text-gray-400 text-xs sm:text-sm'>Automated<br />Lead Generation</p>
             </div>
           </div>
-
-          {/* Center Section */}
-          <div className='flex flex-col sm:flex-row items-center mt-4 md:mt-8'>
-            <div>
-              <img className='w-48 sm:w-72 md:w-110 relative z-20 hand-fade' src={smartPhone} alt="" />
+            <div className='absolute'>
+              <img className='w-60 sm:w-90 md:w-150  ' src={smartPhone} alt="" />
             </div>
+          {/* Center Section */}
+          <div className=' relative flex flex-col sm:flex-row items-center pl-40 md:pl-18 pb-30'>
             
-            <div className='flex items-center mb-6 sm:mb-12 md:mb-50'>
+            
+            <div className='flex items-center mb-6 sm:mb-12 md:mb-50 '>
               <div className="absolute inset-0 pointer-events-none"></div>
-              <div>
-                <img className=" -top-6 -right-8 
-                 w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 
-                 rounded-full shadow-lg" src={image1} alt="" />
-              </div>
               <div className='space-y-4 ml-4 sm:space-y-10 sm:ml-8 md:space-y-15 md:ml-10'>
                 <img className='w-8 h-8 sm:w-12 sm:h-12 md:w-15 md:h-15 rounded-full' src={image2} alt="" />
                 <img className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full' src={image3} alt="" />
               </div>
             </div>
-            <div className='mt-6 lg:mb-100 sm:mt-20 md:mt-50 ml-2 sm:ml-5 space-y-2 sm:space-y-4 text-center md:text-left'>
+            <div className='pt-20 lg:mb-100  md:mt-50 ml-2  space-y-2  sm:space-y-4 text-center md:text-left'>
               <p className='text-blue-600 font-semibold text-sm sm:text-base'>Customer <br />Interaction Al</p>
               <p className='text-gray-400 text-xs sm:text-sm'>24/7 Virtual Agents That Act</p>
             </div>
@@ -88,7 +69,7 @@ const Automation = () => {
         </div>
 
         {/* Smart Automation Card */}
-        <div className='absolute left-1/2 md:left-[75%] top-[90%] md:top-[70%] transform -translate-x-1/2 z-20 bg-blue-100 p-5 sm:p-6 md:p-8 space-y-5 rounded-2xl shadow-lg w-64 sm:w-72 md:w-80 text-center'>
+        <div className='absolute hidden sm:block left-1/2 md:left-[72%] top-[80%] md:top-[60%] transform -translate-x-1/2 z-20 bg-blue-100 p-5 sm:p-6 md:p-8 space-y-5 rounded-2xl shadow-lg w-64 sm:w-72 md:w-80 text-center'>
           <div className='text-blue-600 font-bold text-base sm:text-lg'>
             <h1>Smart Automation</h1>
           </div>
@@ -114,13 +95,12 @@ const Automation = () => {
           </div>
         </div>
       </section>
-
       {/* Title Section */}
-      <div className='text-center mt-24 sm:mt-28 space-y-4 sm:space-y-6 px-4'>
+      <div className='text-center space-y-4 sm:space-y-6 px-4'>
         <div className='ml-0 md:ml-160'>
           <BsStars className='text-blue-600 w-16 h-8 sm:w-40 sm:h-16 md:w-50 md:h-20 mx-auto md:mx-0' />
         </div>
-        <div className='text-2xl sm:text-4xl md:text-7xl font-bold text-blue-600'>
+        <div className='text-2xl sm:text-4xl md:text-6xl font-semibold text-blue-600'>
           <h1>AI SALES AUTOMATION BUILT <br className='hidden md:block' /> FOR CONVERSION</h1>
         </div>
       </div>

@@ -115,7 +115,7 @@ export default function Navbar() {
         {/* Desktop Buttons */}
         <div className="hidden md:flex gap-3">
           <button className="px-4 py-1.5 rounded-full bg-[#3b82f6] text-white text-sm hover:shadow-md transition">
-            Try Now
+            Book a Demo
           </button>
         </div>
 

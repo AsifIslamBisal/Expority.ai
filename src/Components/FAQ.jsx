@@ -1,45 +1,64 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const FAQ = () => {
+  // ডিফল্ট হিসেবে খালি রাখা হয়েছে, useEffect দিয়ে সেট হবে
+  const [openIndex, setOpenIndex] = useState([]);
 
-    const [openIndex, setOpenIndex] = useState([0, 6]);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        // মোবাইলের জন্য শুধু ১ম টা ওপেন
+        setOpenIndex([0]);
+      } else {
+        // ডেস্কটপের জন্য আগের মতো ০ এবং ৬ ওপেন
+        setOpenIndex([0, 6]);
+      }
+    };
 
- const faqsColumn1 = [
+    // শুরুতে একবার রান হবে
+    handleResize();
+
+    // উইন্ডো রিসাইজ করলে আপডেট হবে
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const faqsColumn1 = [
     {
-      question: "What makes Expority AI different?",
-      answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here."
+      question: "What benefits can I expect?",
+      answer: "Faster lead response, higher engagement, more bookings, less manual work, better customer experience, and more time to grow your business."
     },
     {
-      question: "How fast can your models adapt?",
-      answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here."
+      question: "Do AI Agents handle real conversations?",
+      answer: "Yes. Our AI Agents sound natural, answer questions, and guide leads just like a human assistant."
     },
     {
-      question: "Do I need technical knowledge?",
-      answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here."
+      question: "What does the AI Agent service do?",
+      answer: "They work 24/7 to engage visitors, qualify leads, answer questions, and book appointments automatically, proactively nurturing leads so you can focus on high-value work."
     },
     {
-      question: "Can Expority integrate with our existing Business Model?",
-      answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here."
+      question: "What is Workflow Automation?",
+      answer: "It automates repetitive tasks: follow-ups, appointment reminders, and lead nurturing—reducing manual work and errors while improving efficiency and client satisfaction."
     }
   ];
 
   const faqsColumn2 = [
     {
-      question: "What industries benefit most from Expority AI?",
-      answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here."
+      question: "What makes Expority AI different?",
+      answer: "Unlike standard chat bots, our AI understands your business, connects conversations with workflows, and automatically follows up, qualifies, and moves leads forward."
     },
     {
-      question: "Is there a way to test before full integration?",
-      answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here."
+      question: "Which industries benefit most?",
+      answer: "Service-driven businesses like real estate, financial services, healthcare, education, marketing agencies, e-commerce, and any business handling high volumes of inquiries."
     },
     {
-      question: "Is your AI safe for enterprise-level deployment?",
-      answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here."
+      question: "Do I need technical knowledge?",
+      answer: "No. We handle setup, configuration, and optimization, and the system is easy to manage."
     },
     {
-      question: "What kind of data does Expority AI require to train?",
-      answer: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here."
+      question: "Can Expority integrate with my business?",
+      answer: "Yes. Our AI works seamlessly with your existing processes and tools."
     }
   ];
 
@@ -51,7 +70,7 @@ const FAQ = () => {
     }
   };
 
-   const renderFAQItem = (faq, index) => (
+  const renderFAQItem = (faq, index) => (
     <div
       key={index}
       className="bg-white/60 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
@@ -82,9 +101,8 @@ const FAQ = () => {
     </div>
   );
 
-
-    return (
-         <div className="bg-linear-to-br from-white via-cyan-50/30 to-white py-16 px-4">
+  return (
+    <div className="bg-linear-to-br from-white via-cyan-50/30 to-white py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-16">
           FREQUENTLY ASKED <br /> <span>QUESTIONS</span>
@@ -101,7 +119,7 @@ const FAQ = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default FAQ;

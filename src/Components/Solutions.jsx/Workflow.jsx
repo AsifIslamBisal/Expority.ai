@@ -10,17 +10,17 @@ const Workflow = () => {
         {
             title: "Real-Time Automation",
             subtitle: "AI Intake Automation",
-            items: ["Bullet Point", "Bullet Point", "Bullet Point", "Bullet Point"]
+            items: ["Instant lead capture", "Automatic data collection", "Smart lead qualification", "Real-time CRM sync"]
         },
         {
             title: "Constantly Updation",
             subtitle: "AI Documentation",
-            items: ["Bullet Point", "Bullet Point", "Bullet Point", "Bullet Point"]
+            items: ["Auto document updates", "Version tracking", "Instant access to changes", "Seamless data management"]
         },
         {
             title: "All-in-One System",
             subtitle: "CRM Automation",
-            items: ["Bullet Point", "Bullet Point", "Bullet Point", "Bullet Point"]
+            items: ["Centralized CRM", "Automated workflows", "Lead tracking", "Real-time reporting"]
         }
     ];
     return (
@@ -60,7 +60,7 @@ const Workflow = () => {
                 <img 
                     src={Ai} 
                     alt="AI Robot" 
-                    className="w-[150%] lg:w-[180%] h-auto object-contain max-w-none"
+                    className="w-[150%] lg:w-[180%] h-auto object-contain max-w-none hidden sm:block"
     
                 />
             </div>

@@ -13,17 +13,17 @@ const AiAgent = () => {
     {
       icon: MessageSquare,
       title: "AI Chat Agent",
-      points: ["Bullet Point", "Bullet Point", "Bullet Point"]
+      points: ["Engages website visitors instantly", "Answers questions,captures leads", "Qualifies prospects automatically","Books appointments in real time"]
     },
     {
       icon: Phone,
       title: "AI Voice Agent",
-      points: ["Bullet Point", "Bullet Point", "Bullet Point"]
+      points: ["Handles inbound calls 24/7", "Qualifies callers professionally", "Books and routes appointments","Eliminates missed calls"]
     },
     {
       icon: MessageCircle,
       title: "AI SMS Agent",
-      points: ["Bullet Point", "Bullet Point", "Bullet Point"]
+      points: ["Instant SMS follow-ups", "conversations human-like ", "Reminders & confirmations","Natural interactions"]
     }
   ];
 
@@ -38,7 +38,7 @@ const AiAgent = () => {
           {/* 1. Left Side: Lead Generation */}
           <div className="lg:w-1/4 flex justify-center lg:justify-start">
             <div className="flex items-center space-x-3">
-              <div className="bg-[#4489F7] text-white p-2.5 rounded-xl shadow-lg">
+              <div className="bg-[#4489F7] text-white p-2.5 rounded-xl ">
                 <Layers size={20} />
               </div>
               <div className="text-left">
@@ -57,10 +57,10 @@ const AiAgent = () => {
             {/* Heading Section: No-Wrap use kora hoyeche jate line na bhange */}
             <div className="flex flex-col items-center w-full">
               <h1 className="text-[6vw] sm:text-[5vw] md:text-[50px] lg:text-[62px] font-semibold text-gray-900 tracking-tight leading-tight whitespace-nowrap">
-                AI Agents That Work Like Your
+                AI Agents That Work 
               </h1>
               <h1 className="text-[6vw] sm:text-[6vw] md:text-[50px] lg:text-[62px] font-semibold text-gray-900 tracking-tight leading-none whitespace-nowrap">
-                Best Team Members
+                Like Your Top Performers
               </h1>
             </div>
 
@@ -69,16 +69,16 @@ const AiAgent = () => {
             </p>
 
             <div className="mt-8 md:mt-10">
-              <button className="bg-[#4489F7] hover:bg-blue-600 text-white px-10 md:px-14 py-3.5 md:py-4 rounded-full text-sm md:text-base font-bold transition-all shadow-xl shadow-blue-200">
+              <button className="bg-[#4489F7] hover:bg-blue-600 text-white px-10 md:px-14 py-3.5 md:py-4 rounded-full text-sm md:text-base font-bold transition-all ">
                 Launch Now
               </button>
             </div>
           </div>
 
           {/* 3. Right Side: Social Media Manager (Icon in Center) */}
-          <div className="lg:w-1/4 flex flex-col items-center text-center">
-            <div className="bg-[#4489F7] text-white p-3 md:p-4 rounded-2xl shadow-lg mb-4">
-              <Box size={24} />
+          <div className="lg:w-1/4 flex flex-col items-center text-center md:pl-35">
+            <div className="bg-[#4489F7] text-white p-3 md:p-2.5 rounded-xl  mb-4">
+              <Box size={20} />
             </div>
             <div>
               <p className="text-sm md:text-lg text-gray-900 font-bold whitespace-nowrap">Social Media Manager</p>
@@ -92,90 +92,91 @@ const AiAgent = () => {
       </div>
     </div>
 
-      {/* Middle Section */}
-      <div className="relative mt-8">
-     {/* Background Large Text */}
-<div
-  className="absolute inset-0 flex justify-center items-center overflow-hidden pointer-events-none"
-  style={{ top: "45%", transform: "translateY(-50%)" }}
->
-  <h1
-    className="text-[4rem] md:text-[12rem] lg:text-[6rem] xl:text-[13rem] font-black tracking-tighter select-none whitespace-nowrap leading-none transition-all duration-300"
-    style={{
-      /* 1. Gradient color from the image (Light blue to slightly darker blue) */
-      background: "linear-gradient(to right, #dcf0fb, #7dd3fc, #dcf0fb)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-      
-      /* 2. This creates the 'fading' effect on the left and right edges */
-      maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-      WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
-      
-      opacity: 0.8, /* Increased opacity slightly to match the image visibility */
-    }}
+     {/* Middle Section */}
+<div className="relative mt-8">
+  {/* Background Large Text */}
+  <div
+    
+    className="absolute inset-0 flex justify-center items-center overflow-hidden pointer-events-none top-[30%] md:top-[45%]"
+    style={{ transform: "translateY(-50%)" }}
   >
-    EXPORITY AI
-  </h1>
-</div>
+    <h1
+      className="text-[4rem] md:text-[12rem] lg:text-[6rem] xl:text-[13rem] font-black tracking-tighter select-none whitespace-nowrap leading-none transition-all duration-300"
+      style={{
+        /* 1. Gradient color */
+        background: "linear-gradient(to right, #dcf0fb, #7dd3fc, #dcf0fb)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+        
+        /* 2. Fading effect */
+        maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
+        
+        opacity: 0.8,
+      }}
+    >
+      EXPORITY AI
+    </h1>
+  </div>
 
-        {/* Content Over Background */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-          {/* Top Cards */}
-          <div className="flex justify-between items-start mb-6 max-w-4xl mx-auto">
-            {/* Left AI Chat Card */}
-            <div className="bg-blue-50 border border-blue-100 px-4 py-3 items-center rounded-xl shadow-sm">
-              <div className=" items-center space-x-2 mb-1 ml-3">
-                <div className="bg-blue-500 w-8 text-white p-2 ml-1 rounded-full">
-                  <MessageCircle size={16} />
-                </div>
-                <p className="font-semibold text-blue-900 text-sm">AI Chat</p>
-              </div>
-              <p className="text-xs text-gray-600 ">
-                AI Chat Agent <br />ready to work <br />for you
-              </p>
-            </div>
-
-            {/* Right AI Voice Card */}
-            <div className="bg-blue-50 border border-blue-100 px-4 py-3 rounded-xl shadow-sm">
-              <div className="flex items-center space-x-2">
-                <div className="bg-blue-500 text-white p-1.5 rounded-full">
-                  <Mic size={16} />
-                </div>
-                <p className="font-semibold text-blue-900 text-sm">
-                  AI Voice Agent
-                </p>
-              </div>
-            </div>
+  {/* Content Over Background */}
+  <div className="relative z-10 max-w-6xl mx-auto px-6">
+    {/* Top Cards */}
+    <div className="flex justify-between items-start mb-6 max-w-4xl mx-auto">
+      {/* Left AI Chat Card */}
+      <div className="hidden sm:block bg-blue-50 border border-blue-100 px-4 py-3 items-center rounded-xl shadow-sm">
+        <div className=" items-center space-x-2 mb-1 ml-3">
+          <div className="bg-blue-500 w-8 text-white p-2 ml-1 rounded-full">
+            <MessageCircle size={16} />
           </div>
+          <p className="font-semibold text-blue-900 text-sm">AI Chat</p>
+        </div>
+        <p className="text-xs text-gray-600 ">
+          AI Chat Agent <br />ready to work <br />for you
+        </p>
+      </div>
 
-          {/* AI Bot Image */}
-          <div className="flex justify-center my-8">
-            <div className="w-[350px] md:w-[450px] lg:w-[500px] h-[400px] md:h-[500px] lg:h-[500px] flex items-center justify-center">
-              <img src={aiBot} alt="" />
-            </div>
+      {/* Right AI Voice Card */}
+      <div className="hidden sm:block bg-blue-50 border border-blue-100 px-4 py-3 rounded-xl shadow-sm">
+        <div className="flex items-center space-x-2">
+          <div className="bg-blue-500 text-white p-1.5 rounded-full">
+            <Mic size={16} />
           </div>
-
-          {/* Bottom Text */}
-          <div className=" flex justify-between items-end max-w-5xl mx-auto">
-            <div className="text-left max-w-xs">
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Connect every part of your workflow with intelligent automation
-                instantly.
-              </p>
-            </div>
-            <div className="text-right">
-              <p className="font-semibold text-base md:text-lg italic">
-                Optimized for Speed.
-              </p>
-              <p className="font-semibold text-base md:text-lg italic">
-                <span className="italic">Engineered for </span>
-                <span>Creativity</span>.
-              </p>
-            </div>
-          </div>
+          <p className="font-semibold text-blue-900 text-sm">
+            AI Voice Agent
+          </p>
         </div>
       </div>
+    </div>
+
+    {/* AI Bot Image */}
+    <div className="flex justify-center my-8">
+      <div className="w-[350px] md:w-[450px] lg:w-[500px] h-[400px] md:h-[500px] lg:h-[500px] flex items-center justify-center">
+        <img src={aiBot} alt="AI Bot" />
+      </div>
+    </div>
+
+    {/* Bottom Text */}
+    <div className=" flex justify-between items-end max-w-5xl mx-auto">
+      <div className="text-left max-w-xs">
+        <p className="text-gray-600 text-sm leading-relaxed">
+          Connect every part of your workflow with intelligent automation
+          instantly.
+        </p>
+      </div>
+      <div className="text-right">
+        <p className="font-semibold text-base md:text-lg">
+          Optimized for Speed.
+        </p>
+        <p className="font-semibold text-base md:text-lg ">
+          <span className="italic">Engineered for </span>
+          <span>Creativity</span>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* Brand Slider */}
       <BrandSlider />

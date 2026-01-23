@@ -37,14 +37,14 @@ const Agent = () => {
     <div className="max-w-7xl mx-auto px-4 py-10">
       {/* Header Text */}
       <div className="mb-10 text-center md:text-left ">
-        <h1 className="text-5xl mb-4 text-center ">
+        <h1 className="text-4xl mb-4 text-center ">
           Why use AI Agents to Automate <br />
         </h1>
-        <h1 className="text-5xl mb-5 text-center ">Industry-Specific Client Acquisition?</h1>
-        <p className="text-gray-600 text-center ">
-          as opposed to using 'Content here, content here', making it look like
+        <h1 className="text-4xl mb-5 text-center ">Industry-Specific Client Acquisition?</h1>
+        <p className="text-gray-700 text-center ">
+          Automation boosts efficiency, increases lead conversion, and enhances client engagement—saving time and driving measurable growth.
           <br />
-          readable English. Many desktop publishing packages and web
+          AI agents target the right prospects, automate follow-ups, and engage leads naturally—delivering faster conversions and consistent growth.
         </p>
       </div>
 

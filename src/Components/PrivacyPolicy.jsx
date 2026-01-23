@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
             Privacy Policy
           </h1>
           <p className="text-sm text-gray-500">
-            Last Updated: <span className="font-medium">[Insert Date]</span>
+            Last Updated: <span className="font-medium">1/21/2026</span>
           </p>
         </header>
 
@@ -212,7 +212,7 @@ export default function PrivacyPolicy() {
             <p className="text-gray-700">
               <span className="font-semibold">Expority</span><br />
               📧 Email: contact@expority.com<br />
-              <span className='flex items-center gap-1'><FaLinkedin/> : <a href="http://www.linkedin.com/company/exmarketing">LINKEDIN</a> </span>
+              <span className='flex items-center gap-1'><FaLinkedin/> : <a className='text-blue-600' href="http://www.linkedin.com/company/exmarketing">LINKEDIN</a> </span>
             </p>
           </section>
 

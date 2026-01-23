@@ -33,7 +33,7 @@ const Mortgage = () => {
                     {/* Headings */}
                     <div className="space-y-10">
                         <div className="space-y-1">
-                            <h1 className="text-6xl md:text-6xl font-semibold text-[#3B82F6] leading-tight tracking-tight">
+                            <h1 className="text-5xl md:text-6xl font-semibold text-[#3B82F6] leading-tight tracking-tight">
                                 AI Automation for
                             </h1>
                             <h1 className="text-6xl md:text-6xl font-bold text-[#3B82F6] tracking-tight">
@@ -71,7 +71,7 @@ const Mortgage = () => {
                     </div>
 
                     {/* Bottom CTA and Text */}
-                    <div className="mt-32 flex flex-col md:flex-row items-end gap-12 mb-8">
+                    <div className="mt-32 flex flex-col md:flex-row md:items-end  gap-12 mb-8">
                         <div className="mb-2">
                             <button className="group flex items-center gap-4 bg-[#3B82F6] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full transition-all shadow-xl shadow-blue-100">
                                 <span className="text-lg font-semibold">Try now</span>
@@ -80,13 +80,12 @@ const Mortgage = () => {
                                 </div>
                             </button>
                         </div>
-                        <div className="flex flex-col gap-5 max-w-sm">
-                            <h3 className="text-4xl font-semibold text-gray-800 leading-[1.1]">
-                                Client Acquisition has <br /> never been easy befor!
-                            </h3>
+                        <div className="flex flex-col gap-5 md:max-w-sm ">
+                            <h3 className="text-4xl font-semibold text-gray-800 leading-[1.1] max-w-[320px] md:max-w-[350px]">
+  Client Acquisition has never been easy before!
+</h3>
                             <p className="text-gray-500 text-base leading-relaxed">
-                                There are many variations of passages of Lorem Ipsum available,
-                                but the majority have suffered alteration in
+                                Our AI solutions streamline lead capture, automate follow-ups, and schedule appointments—helping you win and retain clients effortlessly.
                             </p>
                         </div>
                     </div>
@@ -117,7 +116,7 @@ const Mortgage = () => {
                         <img
                             src={image2}
                             alt="Professional"
-                            className="w-80 h-[480px]  relative z-10"
+                            className="w-80 md:h-[480px]  relative z-10"
                         />
                     </div>
 
@@ -126,7 +125,7 @@ const Mortgage = () => {
                         <img
                             src={image1}
                             alt="Agent"
-                            className="w-80 h-[600px]  "
+                            className="w-80 md:h-[600px]  "
                         />
                     </div>
                 </div>
@@ -148,8 +147,7 @@ const Mortgage = () => {
         <button className="px-6 py-2 hover:bg-blue-600 border border-gray-300 hover:text-white rounded-full text-sm transition">Schedule</button>
       </div>
       <p className="text-gray-500 leading-relaxed">
-        There are many variations of passages of Lorem Ipsum available, 
-        but the majority have suffered alteration in some form.
+        We capture and qualify leads, schedule appointments 24/7, automate follow-ups with human-like engagement, and sync data seamlessly with your CRM—saving time, reducing errors, and boosting business growth.
       </p>
     </div>
   </div>
@@ -174,11 +172,10 @@ const Mortgage = () => {
       
       <div className="max-w-xs">
         <h3 className="text-3xl font-semibold mb-4 leading-tight">
-          Targetting actual Clients
+          targeting actual Clients
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed">
-          There are many variations of passages of Lorem Ipsum available, 
-          but the majority have suffered alteration in some form.
+          Our AI identifies high-intent prospects, filters unqualified leads, and focuses on those most likely to convert—saving time and boosting results.
         </p>
       </div>
     </div>
@@ -223,7 +220,7 @@ const Mortgage = () => {
           </div>
 
           <ul className="space-y-4">
-            {['Feature', 'Feature', 'Feature', 'Feature', 'Feature'].map((item, index) => (
+            {['FeaLead capture & qualification', '24/7 appointment scheduling', 'Automated follow-ups', 'Instant property inquiries','CRM & pipeline updates'].map((item, index) => (
               <li key={index} className="flex items-center text-2xl font-medium text-gray-800">
                 <span className="mr-3 text-3xl">•</span> {item}
               </li>
@@ -242,7 +239,7 @@ const Mortgage = () => {
 
         {/* Right Image Side */}
         <div className="relative">
-          <div className="absolute -top-12 right-0 md:right-5 z-10 ">
+          <div className="absolute -top-12 right-23 md:right-5 z-10 ">
             <div className="flex items-center gap-2 px-4 py-2 border border-gray-400 rounded-full bg-white/50 backdrop-blur-sm text-gray-600 text-sm">
               <PiRainbowThin />
               <span>Here to help you shine.</span>
@@ -284,8 +281,7 @@ const Mortgage = () => {
           </div>
 
           <p className="text-gray-500 max-w-md leading-relaxed">
-            There are many variations of passages of Lorem Ipsum available, 
-            but the majority have suffered alteration in some form.
+            Automation boosts efficiency, increases lead conversion, and enhances client engagement—saving time and driving measurable growth.
           </p>
 
           

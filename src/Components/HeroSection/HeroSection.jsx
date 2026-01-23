@@ -13,7 +13,7 @@ const HeroSection = () => {
         
         {/* Left Section */}
         <div className="lg:col-span-3 flex flex-col items-center lg:items-start justify-end h-full">
-          <div className="text-center lg:text-left mb-auto -mt-2">
+          <div className="hidden sm:block text-center lg:text-left mb-auto -mt-2">
             <div className="inline-flex items-center justify-center w-26 h-20 border-2 border-gray-200 rounded-2xl p-3 mb-4 bg-white shadow-sm">
               <div className="flex items-end justify-center gap-2 h-full">
                 <div className="w-1.5 h-8 bg-cyan-400 rounded-full"></div>
@@ -92,7 +92,7 @@ const HeroSection = () => {
       </span>
     </h1>
 
-    <p className="mt-4 text-sm text-gray-500 leading-relaxed max-w-sm mx-auto lg:ml-20 lg:mx-0">
+    <p className="mt-4 text-sm text-gray-700 leading-relaxed max-w-sm mx-auto lg:ml-20 lg:mx-0">
       Expority builds AI-powered agents and automation systems that handle lead engagement, qualification, follow-up, and booking for service-based businesses — 24/7, without adding headcount.
     </p>
   </div>
