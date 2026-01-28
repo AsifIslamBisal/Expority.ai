@@ -34,11 +34,11 @@ const Automation = () => {
 
   return (
     <section className='bg-linear-to-br from-white via-cyan-50/30 to-white'>
-      <section className=' relative mt-20 md:-mt-12'>
+      <section className=' relative mt-25 md:-mt-12'>
         {/* Main Content */}
         <div className='flex flex-col md:flex-row relative items-center justify-evenly space-y-12 md:space-y-0'>
           {/* Left Section */}
-          <div className='flex items-center  gap-3 sm:gap-5'>
+          <div className='hidden sm:block flex items-center  gap-3 sm:gap-5'>
             <div>
               <img className=' w-16 sm:w-24 md:w-30 ' src={aiHand} alt="" />
             </div>
@@ -61,7 +61,7 @@ const Automation = () => {
                 <img className='w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full' src={image3} alt="" />
               </div>
             </div>
-            <div className='pt-20 lg:mb-100  md:mt-50 ml-2  space-y-2  sm:space-y-4 text-center md:text-left'>
+            <div className='hidden sm:block pt-20 lg:mb-100  md:mt-50 ml-2  space-y-2  sm:space-y-4 text-center md:text-left'>
               <p className='text-blue-600 font-semibold text-sm sm:text-base'>Customer <br />Interaction Al</p>
               <p className='text-gray-400 text-xs sm:text-sm'>24/7 Virtual Agents That Act</p>
             </div>

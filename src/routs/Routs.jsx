@@ -16,6 +16,7 @@ import Mortgage from "../Components/Industries/Mortgage";
 import Finance from "../Components/Industries/Finance";
 import RealEstate from "../Components/Industries/RealEstate";
 import PrivacyPolicy from "../Components/PrivacyPolicy";
+import CalendlyPage from "../Pages/CalendlyPage";
 
 
 export const router = createBrowserRouter([
@@ -68,6 +69,10 @@ export const router = createBrowserRouter([
         {
             path: '/contact',
             element:<Contact/>,
+        },
+        {
+            path: '/booking',
+            element:<CalendlyPage/>,
         },
         {
             path: '/privacy-policy',

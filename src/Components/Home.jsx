@@ -7,6 +7,7 @@ import Refined from './Refined.jsx';
 import Contact from './Contact.jsx';
 import Services from './Services/Services.jsx';
 import FeatureCardsSlider from './Services/FeatureCardsSlider.jsx';
+import CalendlyPage from '../Pages/CalendlyPage.jsx';
 
 const Home = () => {
     return (
@@ -17,7 +18,7 @@ const Home = () => {
             <FeatureCardsSlider/>
             <Agent/>
             <Refined/>
-            <Contact/>
+            <CalendlyPage/>
             
             
         </div>
