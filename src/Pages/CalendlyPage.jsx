@@ -16,7 +16,7 @@ const CalendlyPage = () => {
         </div>
         <div className="w-full h-[700px] overflow-hidden rounded-xl border border-gray-200">
           <InlineWidget
-            url="https://calendly.com/rifat-expority/30min"
+            url="https://calendly.com/ronyt2sec/30min"
             styles={{
               height: "700px",
             }}

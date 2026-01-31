@@ -8,6 +8,7 @@ import Contact from './Contact.jsx';
 import Services from './Services/Services.jsx';
 import FeatureCardsSlider from './Services/FeatureCardsSlider.jsx';
 import CalendlyPage from '../Pages/CalendlyPage.jsx';
+import ELagent from './ELagent.jsx';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <Agent/>
             <Refined/>
             <CalendlyPage/>
+            <ELagent/>
             
             
         </div>
