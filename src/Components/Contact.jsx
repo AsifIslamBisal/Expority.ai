@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { motion } from 'framer-motion'; // Animation এর জন্য
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -78,12 +79,18 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-linear-to-br from-white via-cyan-50/30 py-10 md:py-14 px-4">
+    <div className="bg-linear-to-br from-white via-cyan-50/30 py-10 md:py-14 px-4 mt-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           
-          {/* Left Side - Info (Same for Desktop) */}
-          <div className="space-y-6 md:space-y-8 md:pl-3">
+          {/* Left Side - Animation: Slide from Left */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="space-y-6 md:space-y-8 md:pl-3"
+          >
             <div>
               <p className="text-xs md:text-sm font-semibold text-gray-500 tracking-wider mb-2">
                 CONTACT US
@@ -96,22 +103,24 @@ export default function Contact() {
               </p>
             </div>
 
-            <button 
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => window.location.href = '/'}
-              className="bg-[#3b82f6] hover:bg-blue-800 text-white px-5 py-2.5 md:py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm md:text-base"
+              className="bg-[#3b82f6] hover:bg-blue-800 text-white px-5 py-2.5 md:py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform text-sm md:text-base"
             >
               Explore Now
-            </button>
+            </motion.button>
 
             <div className="space-y-4 md:space-y-6 pt-4 md:pt-8">
-              <div>
+              <div className="flex flex-col">
                 <div className="flex items-center gap-2 mb-1 md:mb-2">
                   <Mail className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
                   <h3 className="font-semibold text-gray-900 text-sm md:text-base">Email Address</h3>
                 </div>
                 <p className="text-gray-600 text-sm md:text-base ml-6 md:ml-7">contact@expority.com</p>
               </div>
-              <div>
+              <div className="flex flex-col">
                 <div className="flex items-center gap-2 mb-1 md:mb-2">
                   <Phone className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
                   <h3 className="font-semibold text-gray-900 text-sm md:text-base">Customer Support</h3>
@@ -119,17 +128,20 @@ export default function Contact() {
                 <p className="text-gray-600 text-sm md:text-base ml-6 md:ml-7">+1(647) 370-8928</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Side - Form (Optimized for Mobile) */}
-          <div className="bg-white lg:ml-8 lg:w-xl rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl p-5 md:p-6 border border-gray-100">
-            {/* Form Fields: Grid adjusts to 1 column on mobile to save space */}
+          {/* Right Side - Animation: Fade up and in */}
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="bg-white lg:ml-8 lg:w-xl rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl p-5 md:p-6 border border-gray-100"
+          >
             <div className="space-y-3 md:space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 <div>
-                  <label className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
-                    First Name*
-                  </label>
+                  <label className="block text-xs md:text-sm font-medium text-gray-700 mb-1">First Name*</label>
                   <input
                     type="text"
                     name="firstName"
@@ -140,9 +152,7 @@ export default function Contact() {
                   {errors.firstName && <p className="text-red-500 text-[10px] mt-1">{errors.firstName}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs md:text-sm font-medium text-gray-700 mb-1">
-                    Last Name*
-                  </label>
+                  <label className="block text-xs md:text-sm font-medium text-gray-700 mb-1">Last Name*</label>
                   <input
                     type="text"
                     name="lastName"
@@ -205,7 +215,6 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              {/* Consent Box - Compact on Mobile */}
               <div className="flex items-start gap-3 bg-gray-50 p-3 md:p-4 rounded-xl border border-gray-200">
                 <input
                   type="checkbox"
@@ -215,16 +224,17 @@ export default function Contact() {
                   className="mt-1 h-3.5 w-3.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                 />
                 <label htmlFor="smsConsent" className="text-[11px] md:text-sm text-gray-600 leading-tight md:leading-relaxed">
-                  I agree to receive SMS messages from <span className="font-semibold">Expority AI</span>.
-                  <br className="hidden md:block" /> Msg & data rates may apply. Reply <span className="font-semibold">STOP</span> to unsubscribe.
+                  I agree to receive SMS messages from <span className="font-semibold">Expority AI</span>. Msg & data rates may apply. Reply <span className="font-semibold">STOP</span> to unsubscribe.
                 </label>
               </div>
 
-              <button
+              <motion.button
+                whileHover={smsConsent ? { scale: 1.02 } : {}}
+                whileTap={smsConsent ? { scale: 0.98 } : {}}
                 onClick={handleSubmit}
                 disabled={status === 'sending' || !smsConsent}
                 className={`w-full px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg text-sm md:text-base ${
-                  smsConsent ? 'bg-blue-600 hover:bg-blue-700 text-white hover:shadow-xl hover:-translate-y-0.5' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  smsConsent ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-200' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 } disabled:opacity-50`}
               >
                 {status === 'sending' ? (
@@ -232,24 +242,23 @@ export default function Contact() {
                 ) : (
                   <>Submit <Send className="w-4 h-4" /></>
                 )}
-              </button>
+              </motion.button>
 
-              {/* Status Notifications - Compact for Mobile */}
               {status === 'success' && (
-                <div className="flex items-center gap-2 text-green-700 bg-green-50 px-3 py-2 md:py-3 rounded-xl border border-green-200 text-xs md:text-sm">
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex items-center gap-2 text-green-700 bg-green-50 px-3 py-2 md:py-3 rounded-xl border border-green-200 text-xs md:text-sm">
                   <CheckCircle className="w-4 h-4 shrink-0" />
                   <p className="font-medium">Message sent! We'll contact you soon.</p>
-                </div>
+                </motion.div>
               )}
 
               {(status === 'failed' || status === 'error') && (
-                <div className={`flex items-center gap-2 px-3 py-2 md:py-3 rounded-xl border text-xs md:text-sm ${status === 'failed' ? 'text-red-700 bg-red-50 border-red-200' : 'text-amber-700 bg-amber-50 border-amber-200'}`}>
+                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className={`flex items-center gap-2 px-3 py-2 md:py-3 rounded-xl border text-xs md:text-sm ${status === 'failed' ? 'text-red-700 bg-red-50 border-red-200' : 'text-amber-700 bg-amber-50 border-amber-200'}`}>
                   <AlertCircle className="w-4 h-4 shrink-0" />
                   <p className="font-medium">{status === 'failed' ? 'Failed to send message.' : 'Please fill all required fields.'}</p>
-                </div>
+                </motion.div>
               )}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

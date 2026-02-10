@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/logo.png";
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 
 const Footer = () => {
+
+      useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/@elevenlabs/convai-widget-embed";
+    script.async = true;
+    script.type = "text/javascript";
+    document.body.appendChild(script);
+
+    return () => {
+        document.body.removeChild(script);
+    };
+    }, []);
+
+
   return (
     <footer className="w-full bg-linear-to-br from-white via-cyan-50/30 to-white">
       <div className="w-full py-16 px-8 md:px-20 lg:px-32">
@@ -23,10 +37,9 @@ const Footer = () => {
     <div className="col-span-1">
         <h4 className="font-bold mb-3 md:mb-4 text-gray-900 text-sm md:text-base">Get Help</h4>
         <ul className="space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600">
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Resources</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">FAQs</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Events</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Support</li>
+            <a href="/works"><li className="hover:text-cyan-600 cursor-pointer transition-colors">Resources</li></a>
+            <a href="/about"><li className="hover:text-cyan-600 cursor-pointer transition-colors">FAQs</li></a>
+            <a href="/booking"><li className="hover:text-cyan-600 cursor-pointer transition-colors">Support</li></a>
         </ul>
     </div>
 
@@ -35,9 +48,9 @@ const Footer = () => {
         <h4 className="font-bold mb-3 md:mb-4 text-gray-900 text-sm md:text-base">Read More</h4>
         <ul className="space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600">
             <li className="hover:text-cyan-600 cursor-pointer transition-colors">Blog</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">About Us</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Careers</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Testimonials</li>
+            <a href="/about"><li className="hover:text-cyan-600 cursor-pointer transition-colors">About Us</li></a>
+            <a href="/about"><li className="hover:text-cyan-600 cursor-pointer transition-colors">Careers</li></a>
+            
         </ul>
     </div>
 
@@ -46,9 +59,8 @@ const Footer = () => {
         <h4 className="font-bold mb-3 md:mb-4 text-gray-900 text-sm md:text-base">Explore</h4>
         <ul className="space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600">
             <li className="hover:text-cyan-600 cursor-pointer transition-colors">Services</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Case Studies</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Our Work</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Contact</li>
+            <a href="/works"><li className="hover:text-cyan-600 cursor-pointer transition-colors">Our Work</li></a>
+            <a href="/contact"><li className="hover:text-cyan-600 cursor-pointer transition-colors">Contact</li></a>
         </ul>
     </div>
 
@@ -56,9 +68,9 @@ const Footer = () => {
     <div className="col-span-1">
         <h4 className="font-bold mb-3 md:mb-4 text-gray-900 text-sm md:text-base">Learn More</h4>
         <ul className="space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600">
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Resources</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Company</li>
-            <li className="hover:text-cyan-600 cursor-pointer transition-colors">Connect</li>
+            <a href="/works"><li className="hover:text-cyan-600 cursor-pointer transition-colors">Resources</li></a>
+            <a href="/"><li className="hover:text-cyan-600 cursor-pointer transition-colors">Company</li></a>
+            <a href="/contact"><li className="hover:text-cyan-600 cursor-pointer transition-colors">Connect</li></a>
         </ul>
     </div>
 </div>
@@ -113,7 +125,7 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/exmarketing/"><FaLinkedinIn className="text-white text-lg" /></a>
             </div>
             <div className="w-10 h-10 bg-[#3b82f6] rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
-              <a href="https://www.facebook.com/share/14VkXSqMYvT/?mibextid=wwXIfr"><FaFacebookF className="text-white text-lg" /></a>
+              <a href="https://www.facebook.com/exporityai"><FaFacebookF className="text-white text-lg" /></a>
             </div>
             <div className="w-10 h-10 bg-[#3b82f6] rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
               <a href="https://www.instagram.com/expority_marketing?igsh=OHY3YTAza2x0azZt"><FaInstagram className="text-white text-lg" /></a>
@@ -122,15 +134,14 @@ const Footer = () => {
 
           <div className="text-sm text-gray-600 flex gap-4">
             <a href="/privacy-policy"><span className="hover:text-cyan-600 cursor-pointer transition-colors">Privacy Policy</span></a>
-            <span>•</span>
-            <span className="hover:text-cyan-600 cursor-pointer transition-colors">Terms of Service</span>
-            <span>•</span>
-            <span className="hover:text-cyan-600 cursor-pointer transition-colors">Cookie Policy</span>
           </div>
         </div>
 
         <div className="pt-8 text-center text-sm text-gray-500">
-          © 2025 <span className="font-semibold text-gray-700">Expority.AI</span>  All rights reserved.
+          © 2026 <span className="font-semibold text-gray-700">Expority.AI</span>  All rights reserved.
+        </div>
+        <div className="fixed bottom-6 right-6 z-[99999]">
+          <elevenlabs-convai agent-id="agent_2501kg8ada9mfvcasn8rnpf2db6g"></elevenlabs-convai>
         </div>
       </div>
     </footer>

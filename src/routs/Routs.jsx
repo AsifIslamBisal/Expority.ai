@@ -24,8 +24,8 @@ export const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-      <ScrollToTop/>,
-      <MainLayout></MainLayout>,
+      <ScrollToTop/>
+      <MainLayout></MainLayout>
       </>
     ),
     errorElement:<ErrorPage/>,

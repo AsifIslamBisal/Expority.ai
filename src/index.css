@@ -1,8 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
 @import "tailwindcss";
 
+
+
 * {
   font-family: "Montserrat", sans-serif;
+}
+
+/* Enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Optional: Smooth transition when switching themes */
+* {
+  @apply transition-colors duration-300;
+}
+
+.bg-hero {
+  @apply bg-linear-to-br from-white via-cyan-50/30 to-white dark:from-gray-900 dark:via-cyan-900/10 dark:to-gray-950 transition-colors duration-500;
+}
+
+
+/* Custom theme colors (for easier reuse) */
+@theme {
+  --color-bg-light: white;
+  --color-bg-dark: #041b23;
+  --color-text-light: black;
+  --color-text-dark: white;
 }
 
 

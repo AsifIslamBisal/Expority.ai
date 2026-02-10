@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import {
-  FiChevronDown,
-  FiMenu,
-  FiX,
-} from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/logo.png";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { TbWorldSearch } from "react-icons/tb";
 import { LuWorkflow } from "react-icons/lu";
+import ThemeToggle from "../ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [openIndex, setOpenIndex] = useState(null); // desktop hover dropdown
-  const [showMenu, setShowMenu] = useState(false); // mobile sidebar
-  const [mobileDropdownIndex, setMobileDropdownIndex] = useState(null); // mobile dropdown
+  const [showMenu, setShowMenu] = useState(false);
+  const [mobileDropdownIndex, setMobileDropdownIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null); // desktop dropdown
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -45,11 +42,21 @@ export default function Navbar() {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Desktop hover handlers with delay
+  let hideTimeout = null;
+  const handleMouseEnter = (idx) => {
+    if (hideTimeout) clearTimeout(hideTimeout);
+    setOpenIndex(idx);
+  };
+  const handleMouseLeave = () => {
+    hideTimeout = setTimeout(() => setOpenIndex(null), 200); // 200ms delay
+  };
+
   return (
-    <div className="flex flex-col items-center relative z-9999">
+    <div className="flex flex-col items-center relative z-[9999]">
       {/* Navbar */}
       <nav
-        className={`fixed top-4 w-[95%] md:w-[80%] mx-auto z-9999 flex items-center justify-between px-6 py-3 rounded-2xl border border-white/20 backdrop-blur-lg shadow-[0_8px_20px_rgba(0,255,255,0.1)] transition-all duration-300 ${
+        className={`fixed top-4 w-[95%] md:w-[80%] mx-auto z-50 flex items-center justify-between px-6 py-3 rounded-2xl border border-white/20 backdrop-blur-lg shadow-[0_8px_20px_rgba(0,255,255,0.1)] transition-all duration-300 ${
           scrolled ? "bg-white/25" : "bg-white/15"
         }`}
       >
@@ -58,13 +65,13 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-6 items-center text-gray-800 font-medium relative z-9999">
+        <ul className="hidden md:flex gap-6 items-center text-gray-800 font-medium relative">
           {navItems.map((item, idx) => (
             <li
               key={idx}
               className="relative"
-              onMouseEnter={() => item.dropdown && setOpenIndex(idx)}
-              onMouseLeave={() => setOpenIndex(null)}
+              onMouseEnter={() => handleMouseEnter(idx)}
+              onMouseLeave={handleMouseLeave}
             >
               <Link
                 to={item.path || "#"}
@@ -84,12 +91,14 @@ export default function Navbar() {
               {item.dropdown && (
                 <div
                   className={`absolute left-0 top-full mt-2 w-150 rounded-xl border border-cyan-200/30 p-5 
-                    bg-white/80 backdrop-blur-xl shadow-[0_8px_25px_rgba(0,200,255,0.25)] transition-all duration-300 z-9999
-                    ${
-                      openIndex === idx
-                        ? "opacity-100 visible translate-y-0"
-                        : "opacity-0 invisible -translate-y-2"
-                    }`}
+                              bg-white/80 backdrop-blur-xl shadow-[0_8px_25px_rgba(0,200,255,0.25)]
+                              transition-all duration-300 z-[9999] ${
+                                openIndex === idx
+                                  ? "opacity-100 visible translate-y-0"
+                                  : "opacity-0 invisible -translate-y-2"
+                              }`}
+                  onMouseEnter={() => handleMouseEnter(idx)}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-rows-3 gap-4">
                     {item.dropdown.map((drop, dIdx) => (
@@ -97,7 +106,7 @@ export default function Navbar() {
                         key={dIdx}
                         to={drop.path}
                         className="group flex items-center gap-3 px-3 py-2 rounded-lg 
-                          text-gray-800 transition-all duration-300 hover:bg-cyan-50 hover:text-cyan-700"
+                                  text-gray-800 transition-all duration-300 hover:bg-cyan-50 hover:text-cyan-700"
                       >
                         <span className="text-lg transition-all group-hover:text-cyan-500">
                           {drop.icon}
@@ -111,12 +120,16 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        {/* Desktop Buttons */}
+        {/* <div className="hidden md:flex gap-3">
+          <ThemeToggle/>
+        </div> */}
+        {/* Desktop Button */}
         <div className="hidden md:flex gap-3">
-          <Link to="/booking"><button className="px-4 py-1.5 rounded-full bg-[#3b82f6] text-white text-sm hover:shadow-md transition">
-            Book a Demo
-          </button></Link>
+          <Link to="/booking">
+            <button className="px-4 py-1.5 rounded-full bg-[#3b82f6] text-white text-sm hover:shadow-md transition">
+              Book a Demo
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -134,7 +147,7 @@ export default function Navbar() {
         onClick={() => setShowMenu(false)}
       ></div>
 
-      {/* Mobile Sidebar */}
+     {/* Mobile Sidebar */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-white z-9999 shadow-lg transform transition-transform duration-300 md:hidden ${
           showMenu ? "translate-x-0" : "translate-x-full"
@@ -196,6 +209,16 @@ export default function Navbar() {
               )}
             </React.Fragment>
           ))}
+          <div className=" gap-3">
+          <Link to="/booking">
+            <button className="px-4 py-1.5 rounded-full bg-[#3b82f6] text-white text-sm hover:shadow-md transition">
+              Book a Demo
+            </button>
+          </Link>
+        </div>
+        {/* <div>
+          <ThemeToggle/>
+        </div> */}
         </ul>
       </div>
     </div>
