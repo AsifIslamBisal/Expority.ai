@@ -4,18 +4,6 @@ import { FaLinkedinIn, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaEnvelope, FaP
 
 const Footer = () => {
 
-      useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://unpkg.com/@elevenlabs/convai-widget-embed";
-    script.async = true;
-    script.type = "text/javascript";
-    document.body.appendChild(script);
-
-    return () => {
-        document.body.removeChild(script);
-    };
-    }, []);
-
 
   return (
     <footer className="w-full bg-linear-to-br from-white via-cyan-50/30 to-white">
@@ -140,9 +128,7 @@ const Footer = () => {
         <div className="pt-8 text-center text-sm text-gray-500">
           © 2026 <span className="font-semibold text-gray-700">Expority.AI</span>  All rights reserved.
         </div>
-        <div className="fixed bottom-6 right-6 z-[99999]">
-          <elevenlabs-convai agent-id="agent_2501kg8ada9mfvcasn8rnpf2db6g"></elevenlabs-convai>
-        </div>
+        
       </div>
     </footer>
   );
