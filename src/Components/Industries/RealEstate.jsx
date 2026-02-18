@@ -12,6 +12,7 @@ import avatar1 from '../../assets/Mortgage/client testimonial 1.png';
 import avatar2 from '../../assets/Mortgage/client testimonial 2.png'; 
 import { PiRainbowThin } from 'react-icons/pi';
 import AgentClientVideo from '../../assets/Mortgage/Agent_Client.mp4';
+import { useNavigate } from 'react-router-dom';
 
 const RealEstate = () => {
     const testimonialImages = [
@@ -32,6 +33,12 @@ const RealEstate = () => {
             transition: { staggerChildren: 0.2 }
         }
     };
+
+      const navigate = useNavigate();
+
+    const handleClick = () => {
+    navigate("/booking"); 
+  };
 
     return (
         <section>
@@ -74,7 +81,7 @@ const RealEstate = () => {
 
                         <motion.div variants={fadeInUp} className="mt-32 flex flex-col md:flex-row md:items-end gap-12 mb-8">
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                <button className="group flex items-center gap-6 bg-[#3B82F6] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full transition-all shadow-xl shadow-blue-100">
+                                <button onClick={handleClick} className="group flex items-center gap-6 bg-[#3B82F6] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full transition-all shadow-xl shadow-blue-100">
                                     <span className="text-lg font-semibold">Try now</span>
                                     <div className="bg-white p-3 rounded-full text-[#3B82F6] group-hover:rotate-45 transition-transform">
                                         <ArrowUpRight size={24} />
@@ -193,7 +200,7 @@ const RealEstate = () => {
                         </motion.ul>
 
                         <motion.div variants={fadeInUp} className="mt-4">
-                            <button className="bg-[#4285f4] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group">
+                            <button onClick={handleClick} className="bg-[#4285f4] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group">
                                 <span className="text-lg font-medium">Try now</span>
                                 <div className="bg-white text-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-45">
                                     <span className="text-xl font-bold">↗</span>
@@ -293,7 +300,7 @@ const RealEstate = () => {
                         Expert in machine learning and AI development. Spearheading innovation to bring smarter solutions to designers. 10+ years of experience in AI and design automation.
                     </p>
                     <div className="mt-4">
-                        <button className="bg-[#4285f4] hover:bg-blue-600 text-white pl-10 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group shadow-lg shadow-blue-200">
+                        <button onClick={handleClick} className="bg-[#4285f4] hover:bg-blue-600 text-white pl-10 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group shadow-lg shadow-blue-200">
                             <span className="text-xl font-medium">Try now</span>
                             <div className="bg-white text-blue-600 w-11 h-11 rounded-full flex items-center justify-center transition-transform group-hover:rotate-45">
                                 <span className="text-2xl font-bold">↗</span>

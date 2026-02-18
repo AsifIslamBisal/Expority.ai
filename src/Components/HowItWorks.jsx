@@ -150,11 +150,7 @@ const HowItWorks = () => {
                 <ul className="text-gray-600 text-sm leading-relaxed w-full max-w-[300px] list-disc pl-5 space-y-1">
                   {item.list.map((li, i) => <li key={i} className="font-semibold">{li}</li>)}
                 </ul>
-                <div className="mt-auto pt-4">
-                  <button className="flex items-center justify-start font-medium gap-1 text-gray-700 hover:text-blue-600 transition-colors">
-                    Read More <IoArrowForwardCircle className="text-xl" />
-                  </button>
-                </div>
+                
               </motion.div>
               {index < 2 && (
                 <>

@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { MessageSquare, Phone, MessageCircle, Target, Calendar, Workflow, ChevronLeft, ChevronRight } from 'lucide-react';
+import {  Target, Calendar, Workflow, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { LuBrainCircuit } from 'react-icons/lu';
+import { useNavigate } from 'react-router-dom';
+import { GrUserSettings } from 'react-icons/gr';
 
 const FeatureCardsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const navigate = useNavigate()
 
   const features = [
-    { icon: <MessageSquare className="w-12 h-12" />, title: "AI Chat Agents", description: "Intelligent chatbots that engage customers 24/7, answer questions instantly, and provide personalized support across all your channels.", cta: "Learn More" },
-    { icon: <Phone className="w-12 h-12" />, title: "AI Voice Agents", description: "Natural-sounding voice AI that handles phone calls, schedules appointments, and delivers seamless customer experiences.", cta: "Book a Demo" },
-    { icon: <MessageCircle className="w-12 h-12" />, title: "AI SMS Agents", description: "Automated text messaging that nurtures leads, sends reminders, and maintains engagement through conversational SMS.", cta: "Discover More" },
-    { icon: <Target className="w-12 h-12" />, title: "Lead Qualification", description: "Smart AI that identifies high-quality prospects, scores leads automatically, and routes them to the right team members.", cta: "Learn More" },
-    { icon: <Calendar className="w-12 h-12" />, title: "Appointment Booking", description: "Automated scheduling system that books meetings, sends confirmations, and syncs with your calendar effortlessly.", cta: "Book a Demo" },
-    { icon: <Workflow className="w-12 h-12" />, title: "CRM & Workflow Automation", description: "Powerful automation that streamlines processes, manages customer data, and eliminates repetitive tasks completely.", cta: "Discover More" }
+    { icon: <GrUserSettings className="w-12 h-12" />, title: "Sales Automation", description: "Sales Automation is the use of technology to automate repetitive sales tasks like lead capture, follow-ups, pipeline tracking, and reporting.", cta: "Learn More", link: "/Solutions/sales-automation"  },
+    { icon: <Workflow className="w-12 h-12" />, title: "CRM & Workflow Automation", description: "Powerful automation that streamlines processes, manages customer data, and eliminates repetitive tasks completely.", cta: "Learn More" },
+    { icon: <LuBrainCircuit className="w-12 h-12" />, title: "AI Agents", description: "Intelligent chatbots that engage customers 24/7, answer questions instantly, and provide personalized support across all your channels.", cta: "Learn More",link: "/Solutions/ai-Agent" },
+     { icon: <Target className="w-12 h-12" />, title: "Lead Qualification", description: "Smart AI that identifies high-quality prospects, scores leads automatically, and routes them to the right team members.", cta: "Learn More" },
+    { icon: <Calendar className="w-12 h-12" />, title: "Appointment Booking", description: "Automated scheduling system that books meetings, sends confirmations, and syncs with your calendar effortlessly.", cta: "Book a Demo",link: "/booking" }, 
   ];
+
+  const handleCtaClick = (feature) =>{
+    navigate(feature.link);
+  };
 
   // Desktop visible cards logic
   const getVisibleCards = () => {
@@ -65,10 +72,10 @@ const FeatureCardsSlider = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold bg-linear-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2 leading-tight">
-            AI Agents 
+            Smart Automation Agents
           </h1>
           <h2 className="text-3xl md:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            That Work Like Your Best Team Members
+            That Execute Like Your Top Performers
           </h2>
         </motion.div>
 
@@ -110,7 +117,7 @@ const FeatureCardsSlider = () => {
                   {feature.description}
                 </p>
                 <div className="text-center">
-                  <button className={`${hoveredCard === index ? 'text-gray-900' : 'text-blue-600'} font-medium`}>
+                  <button onClick={() => handleCtaClick(feature)} className={`${hoveredCard === index ? 'text-gray-900' : 'text-blue-600'} font-medium`}>
                     {feature.cta} →
                   </button>
                 </div>
@@ -150,7 +157,7 @@ const FeatureCardsSlider = () => {
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-gray-800">{feature.title}</h3>
                   <p className="text-xs text-gray-600 mb-6">{feature.description}</p>
-                  <button className="text-blue-600 font-bold text-xs">{feature.cta} →</button>
+                  <button onClick={() => handleCtaClick(feature)} className="text-blue-600 font-bold text-xs">{feature.cta} →</button>
                 </motion.div>
               </div>
             ))}

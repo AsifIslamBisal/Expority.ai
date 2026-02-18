@@ -11,7 +11,7 @@ const Footer = () => {
         {/* Grid Container - Mobile: 2 cols, Desktop: 5 cols */}
 <div className="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-gray-200">
           
-    {/* Logo and Description - Mobile e puro width nibe */}
+    
     <div className="col-span-2 md:col-span-1 space-y-2">
         <div className="w-32 md:w-40">
             <img src={logo} alt="Logo" />

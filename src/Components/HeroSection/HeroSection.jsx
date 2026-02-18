@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import robotImg from "../../assets/Ai Bot.png";
 
 const HeroSection = () => {
-  // ✅ State for counting the "Qualified Lead"
+  
   const [leadCount, setLeadCount] = useState(0);
 
   useEffect(() => {
     let start = 0;
     const end = 78;
-    const duration = 2000; // 2 seconds
+    const duration = 2000; 
     const stepTime = 20;
     const increment = end / (duration / stepTime);
 

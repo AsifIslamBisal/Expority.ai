@@ -6,12 +6,16 @@ import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { TbWorldSearch } from "react-icons/tb";
 import { LuWorkflow } from "react-icons/lu";
 import ThemeToggle from "../ThemeToggle";
+import { MdOutlineHealthAndSafety, MdOutlineRealEstateAgent } from "react-icons/md";
+import { BsBank } from "react-icons/bs";
+import { PiStudent } from "react-icons/pi";
+import { FaClinicMedical, FaCubes } from "react-icons/fa";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [mobileDropdownIndex, setMobileDropdownIndex] = useState(null);
-  const [openIndex, setOpenIndex] = useState(null); // desktop dropdown
+  const [openIndex, setOpenIndex] = useState(null); 
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -25,9 +29,10 @@ export default function Navbar() {
     {
       name: "Solutions",
       dropdown: [
-        { label: "AI Agents", icon: <HiOutlineDesktopComputer />, path: "/Solutions/ai-agent" },
-        { label: "Sales & Revenue Automation", icon: <TbWorldSearch />, path: "/Solutions/automation" },
+        { label: "Sales  Automation", icon: <TbWorldSearch />, path: "/Solutions/sales-automation" },
         { label: "AI Workflow & Operations", icon: <LuWorkflow />, path: "/Solutions/workflow" },
+        { label: "CRM & Workflow Automation", icon: <LuWorkflow />, path: "" },
+        { label: "AI Agents", icon: <HiOutlineDesktopComputer />, path: "/Solutions/ai-agent" },
       ],
     },
     {
@@ -35,7 +40,12 @@ export default function Navbar() {
       dropdown: [
         { label: "Mortgage", icon: <HiOutlineDesktopComputer />, path: "/industries/mortgage" },
         { label: "Finance", icon: <TbWorldSearch />, path: "/industries/finance" },
-        { label: "Real Estate", icon: <LuWorkflow />, path: "/industries/real-Estate" },
+        { label: "Real Estate", icon: <MdOutlineRealEstateAgent />, path: "/industries/real-Estate" },
+        { label: "Insurance", icon: <BsBank />, path: "/industries/insurance" },
+        { label: "Education", icon: <PiStudent />, path: "/industries/education" },
+        { label: "Healthcare", icon: <FaClinicMedical />, path: "/industries/healthcare" },
+        { label: "SaaS", icon: <LuWorkflow />, path: "/industries/saas" },
+        { label: "Recruitment", icon: <FaCubes />, path: "/industries/recruitment" },
       ],
     },
     { name: "About", path: "/about" },
@@ -49,7 +59,7 @@ export default function Navbar() {
     setOpenIndex(idx);
   };
   const handleMouseLeave = () => {
-    hideTimeout = setTimeout(() => setOpenIndex(null), 200); // 200ms delay
+    hideTimeout = setTimeout(() => setOpenIndex(null), 200); 
   };
 
   return (

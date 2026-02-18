@@ -1,11 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Animation এর জন্য
+import { motion } from 'framer-motion'; 
 import robot from '../assets/about/Robot.png';
 import robot2 from '../assets/about/image.png';
 import { Target, Eye, Sparkles } from 'lucide-react';
 import FAQ from './FAQ';
 
-// Animation Variants - এগুলো স্টাইল ঠিক রাখে শুধু মুভমেন্ট কন্ট্রোল করে
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
@@ -150,9 +150,9 @@ const About = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
           >
             {[
-              { icon: <Target className="w-6 h-6" />, title: "MISSION", text: "To help businesses grow efficiently by integrating AI..." },
-              { icon: <Eye className="w-6 h-6" />, title: "VISION", text: "To become a trusted AI automation and digital growth partner..." },
-              { icon: <Sparkles className="w-6 h-6" />, title: "Core Values", text: "At the heart of our company are integrity, innovation..." }
+              { icon: <Target className="w-6 h-6" />, title: "MISSION", text: "To become a trusted AI automation and digital growth partner for businesses across Canada, the United States, and North America by delivering reliable, ethical, and scalable solutions." },
+              { icon: <Eye className="w-6 h-6" />, title: "VISION", text: "To help businesses grow efficiently by integrating AI, automation, and digital systems into one seamless operational framework." },
+              { icon: <Sparkles className="w-6 h-6" />, title: "Core Values", text: "We create AI-powered, future-ready solutions that transform how businesses capture and convert leads" }
             ].map((item, index) => (
               <motion.div key={index} variants={fadeInUp} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col">
                 <div className="flex items-center gap-3 mb-6">
@@ -160,7 +160,7 @@ const About = () => {
                   <h2 className="text-xl font-bold uppercase">{item.title}</h2>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{item.text}</p>
-                <button className="text-sm font-medium hover:text-cyan-400 transition-colors text-left w-fit">Learn More</button>
+                
               </motion.div>
             ))}
           </motion.div>
@@ -178,7 +178,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Unchanged */}
+      
       <section>
         <FAQ />
       </section>

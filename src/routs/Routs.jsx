@@ -17,6 +17,13 @@ import Finance from "../Components/Industries/Finance";
 import RealEstate from "../Components/Industries/RealEstate";
 import PrivacyPolicy from "../Components/PrivacyPolicy";
 import CalendlyPage from "../Pages/CalendlyPage";
+import SocialMediaManager from "../Components/SocialMediaManager";
+import Insurance from "../Components/Industries/Insurance";
+import Education from "../Components/Industries/Education";
+import Healthcare from "../Components/Industries/Healthcare";
+import SaaS from "../Components/Industries/SaaS";
+import RecruiTment from "../Components/Industries/Recruitment";
+
 
 
 export const router = createBrowserRouter([
@@ -43,12 +50,16 @@ export const router = createBrowserRouter([
             element:<AiAgent/>,
         },
         {
-            path: '/Solutions/automation',
+            path: '/Solutions/sales-automation',
             element:<Automation/>,
         },
         {
             path: '/Solutions/workflow',
             element:<Workflow/>,
+        },
+        {
+            path: '/media-manager',
+            element:<SocialMediaManager/>,
         },
         {
             path: '/industries/mortgage',
@@ -61,6 +72,26 @@ export const router = createBrowserRouter([
         {
             path: '/industries/real-Estate',
             element:<RealEstate/>,
+        },
+        {
+            path: '/industries/insurance',
+            element:<Insurance/>,
+        },
+        {
+            path: '/industries/education',
+            element:<Education/>,
+        },
+        {
+            path: '/industries/healthcare',
+            element:<Healthcare/>,
+        },
+        {
+            path: '/industries/saas',
+            element:<SaaS/>,
+        },
+        {
+            path: '/industries/recruitment',
+            element:<RecruiTment/>,
         },
         {
             path: '/about',

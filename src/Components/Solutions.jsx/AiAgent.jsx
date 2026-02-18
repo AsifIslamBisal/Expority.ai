@@ -194,9 +194,9 @@ const AiAgent = () => {
           <p className="text-gray-600 mb-6 leading-relaxed">
             Discover a new way to generate, refine, and explore visual concepts — bringing your imagination to life with unmatched efficiency.
           </p>
-          <motion.button whileHover={{ scale: 1.05 }} className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-medium transition duration-300 shadow-md">
+          <a href="/media-manager"><motion.button whileHover={{ scale: 1.05 }} className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-medium transition duration-300 shadow-md">
             Learn More
-          </motion.button>
+          </motion.button></a>
         </div>
 
         <div className="relative w-87.5 sm:w-100 h-87.5 mx-auto">
@@ -251,11 +251,7 @@ const AiAgent = () => {
             ))}
           </div>
 
-          <motion.div whileHover={{ scale: 1.05 }} className="flex justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-full transition-colors shadow-lg hover:shadow-xl">
-              Deploy AI Agent
-            </button>
-          </motion.div>
+          
         </div>
       </motion.div>
     </section>

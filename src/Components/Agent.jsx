@@ -38,7 +38,7 @@ const Agent = () => {
   const [calendlyUrl, setCalendlyUrl] = useState("");
   const modalRef = useRef(null);
 
-  // Modal er baire click korle close hobe
+  
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (modalRef.current && !modalRef.current.contains(e.target)) {

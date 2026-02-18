@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { motion } from 'framer-motion'; // Animation এর জন্য
+import { motion } from 'framer-motion'; 
 
 export default function Contact() {
   const [formData, setFormData] = useState({

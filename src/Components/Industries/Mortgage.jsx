@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { motion, useInView, useSpring, useTransform } from 'framer-motion';
-
-// Assets
 import image1 from '../../assets/Mortgage/image 1.png';
 import image2 from '../../assets/Mortgage/image 2.png';
 import image3 from '../../assets/Mortgage/image 3.png';
@@ -12,8 +10,9 @@ import avatar1 from '../../assets/Mortgage/client testimonial 1.png';
 import avatar2 from '../../assets/Mortgage/client testimonial 2.png'; 
 import { PiRainbowThin } from 'react-icons/pi';
 import AgentClientVideo from '../../assets/Mortgage/Agent_Client.mp4';
+import { useNavigate } from 'react-router-dom';
 
-// ১. নাম্বার অ্যানিমেশনের জন্য কাস্টম কাউন্টার কম্পোনেন্ট
+
 const AnimatedNumber = ({ value }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -35,7 +34,7 @@ const AnimatedNumber = ({ value }) => {
     return <motion.span ref={ref}>{displayValue}</motion.span>;
 };
 
-// ২. স্ক্রল রিভিল অ্যানিমেশন ভ্যারিয়েন্ট
+
 const fadeInScroll = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
@@ -46,6 +45,12 @@ const Mortgage = () => {
         { id: 1, src: avatar1 }, 
         { id: 2, src: avatar2 }
     ];
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+    navigate("/booking"); 
+  };
 
     return (
         <section>
@@ -91,7 +96,7 @@ const Mortgage = () => {
 
                         <div className="mt-32 flex flex-col md:flex-row md:items-end gap-12 mb-8">
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                <button className="group flex items-center gap-6 bg-[#3B82F6] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full transition-all shadow-xl shadow-blue-100">
+                                <button onClick={handleClick} className="group flex items-center gap-6 bg-[#3B82F6] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full transition-all shadow-xl shadow-blue-100">
                                     <span className="text-lg font-semibold">Try now</span>
                                     <div className="bg-white p-3 rounded-full text-[#3B82F6] group-hover:rotate-45 transition-transform">
                                         <ArrowUpRight size={24} />
@@ -192,7 +197,7 @@ const Mortgage = () => {
                             ))}
                         </ul>
                         <div className="mt-4">
-                            <button className="bg-[#4285f4] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group">
+                            <button onClick={handleClick}  className="bg-[#4285f4] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group">
                                 <span className="text-lg font-medium">Try now</span>
                                 <div className="bg-white text-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-45">
                                     <span className="text-xl font-bold">↗</span>
@@ -258,7 +263,7 @@ const Mortgage = () => {
                     <h2 className="text-6xl md:text-7xl font-normal tracking-tight mb-10">Get Started</h2>
                     <p className="text-gray-500 text-lg md:text-xl leading-relaxed max-w-3xl mb-12">Expert in machine learning and AI development. Spearheading innovation to bring smarter solutions to designers. 10+ years of experience in AI and design automation.</p>
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                        <button className="bg-[#4285f4] hover:bg-blue-600 text-white pl-10 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group shadow-lg shadow-blue-200">
+                        <button onClick={handleClick}  className="bg-[#4285f4] hover:bg-blue-600 text-white pl-10 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group shadow-lg shadow-blue-200">
                             <span className="text-xl font-medium">Try now</span>
                             <div className="bg-white text-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-45">
                                 <span className="text-2xl font-bold">↗</span>

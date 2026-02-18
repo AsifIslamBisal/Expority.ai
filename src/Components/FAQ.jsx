@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { motion } from 'framer-motion'; // Animation এর জন্য
+import { motion } from 'framer-motion';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState([]);
@@ -46,7 +46,7 @@ const FAQ = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // একটার পর একটা আসার সময়
+        staggerChildren: 0.1, 
       }
     }
   };
@@ -63,7 +63,7 @@ const FAQ = () => {
   const renderFAQItem = (faq, index) => (
     <motion.div
       key={index}
-      variants={itemVariants} // প্রতিটি আইটেম এই এনিমেশন পাবে
+      variants={itemVariants} 
       className="bg-white/60 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-xl transition-all duration-300"
     >
       <button

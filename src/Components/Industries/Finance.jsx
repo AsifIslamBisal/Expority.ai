@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { motion, useInView, useSpring, useTransform } from 'framer-motion';
-
-// Images
 import image1 from '../../assets/Mortgage/image 1.png';
 import image2 from '../../assets/Mortgage/image 2.png';
 import image3 from '../../assets/Mortgage/image 3.png';
@@ -12,13 +10,18 @@ import avatar1 from '../../assets/Mortgage/client testimonial 1.png';
 import avatar2 from '../../assets/Mortgage/client testimonial 2.png'; 
 import { PiRainbowThin } from 'react-icons/pi';
 import AgentClientVideo from '../../assets/Mortgage/Agent_Client.mp4';
+import { useNavigate } from 'react-router-dom';
 
-// ১. নাম্বার অ্যানিমেশনের জন্য কাস্টম কাউন্টার
+
+
+
 const Counter = ({ value }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     const springValue = useSpring(0, { duration: 2500, bounce: 0 });
     const displayValue = useTransform(springValue, (latest) => Math.floor(latest).toLocaleString());
+
+    
 
     useEffect(() => {
         if (isInView) springValue.set(value);
@@ -30,11 +33,17 @@ const Counter = ({ value }) => {
 const Finance = () => {
     const testimonialImages = [{ id: 1, src: avatar1 }, { id: 2, src: avatar2 }];
 
-    // অ্যানিমেশন ভ্যারিয়েন্টস
+   
     const fadeInUp = {
         hidden: { opacity: 0, y: 40 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
     };
+
+   const navigate = useNavigate();
+
+    const handleClick = () => {
+    navigate("/booking"); 
+  };
 
     return (
         <section>
@@ -72,7 +81,7 @@ const Finance = () => {
 
                         <div className="mt-32 flex flex-col md:flex-row md:items-end gap-12 mb-8">
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                    <button className="group flex items-center gap-6 bg-[#3B82F6] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full transition-all shadow-xl shadow-blue-100">
+                                    <button onClick={handleClick} className="group flex items-center gap-6 bg-[#3B82F6] hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full transition-all shadow-xl shadow-blue-100">
                                         <span className="text-lg font-semibold">Try now</span>
                                         <div className="bg-white p-3 rounded-full text-[#3B82F6] group-hover:rotate-45 transition-transform">
                                             <ArrowUpRight size={24} />
@@ -172,7 +181,7 @@ const Finance = () => {
                                 </motion.li>
                             ))}
                         </ul>
-                        <motion.button whileHover={{ x: 10 }} className="bg-[#4285f4] w-fit hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group">
+                        <motion.button onClick={handleClick} whileHover={{ x: 10 }} className="bg-[#4285f4] w-fit hover:bg-blue-600 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group">
                             <span className="text-lg font-medium">Try now</span>
                             <div className="bg-white text-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-45">
                                 <span className="text-xl font-bold">↗</span>
@@ -235,7 +244,7 @@ const Finance = () => {
                 <div className="max-w-4xl mx-auto flex flex-col items-center">
                     <h2 className="text-6xl md:text-7xl font-normal tracking-tight mb-10">Get Started</h2>
                     <p className="text-gray-500 text-lg md:text-xl leading-relaxed max-w-3xl mb-12">Expert in machine learning and AI development. Spearheading innovation to bring smarter solutions.</p>
-                    <motion.button whileHover={{ scale: 1.1, rotate: -2 }} whileTap={{ scale: 0.9 }} className="bg-[#4285f4] hover:bg-blue-600 text-white pl-10 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group shadow-lg shadow-blue-200">
+                    <motion.button onClick={handleClick} whileHover={{ scale: 1.1, rotate: -2 }} whileTap={{ scale: 0.9 }} className="bg-[#4285f4] hover:bg-blue-600 text-white pl-10 pr-2 py-2 rounded-full flex items-center gap-6 transition-all group shadow-lg shadow-blue-200">
                         <span className="text-xl font-medium">Try now</span>
                         <div className="bg-white text-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:rotate-45">
                             <span className="text-2xl font-bold">↗</span>
