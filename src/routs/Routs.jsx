@@ -9,9 +9,9 @@ import Contact from "../Components/Contact";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import HowItWorks from "../Components/HowItWorks";
 import ScrollToTop from "../ScrollToTop";
-import AiAgent from "../Components/Solutions.jsx/AiAgent";
-import Automation from "../Components/Solutions.jsx/Automation";
-import Workflow from "../Components/Solutions.jsx/Workflow";
+import AiAgent from "../Components/Solutions/AiAgent";
+import Automation from "../Components/Solutions/Automation";
+import Workflow from "../Components/Solutions/Workflow";
 import Mortgage from "../Components/Industries/Mortgage";
 import Finance from "../Components/Industries/Finance";
 import RealEstate from "../Components/Industries/RealEstate";
@@ -23,6 +23,10 @@ import Education from "../Components/Industries/Education";
 import Healthcare from "../Components/Industries/Healthcare";
 import SaaS from "../Components/Industries/SaaS";
 import RecruiTment from "../Components/Industries/Recruitment";
+import CRMautomation from "../Components/Solutions/CRMautomation";
+import LeadQualification from "../Components/Solutions/LeadQualification";
+
+
 
 
 
@@ -54,8 +58,16 @@ export const router = createBrowserRouter([
             element:<Automation/>,
         },
         {
+            path: '/Solutions/crm-automation',
+            element:<CRMautomation/>,
+        },
+        {
             path: '/Solutions/workflow',
             element:<Workflow/>,
+        },
+        {
+            path: '/Solutions/leadQualification',
+            element:<LeadQualification/>,
         },
         {
             path: '/media-manager',

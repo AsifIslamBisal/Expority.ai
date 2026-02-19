@@ -14,9 +14,9 @@ const FeatureCardsSlider = () => {
 
   const features = [
     { icon: <GrUserSettings className="w-12 h-12" />, title: "Sales Automation", description: "Sales Automation is the use of technology to automate repetitive sales tasks like lead capture, follow-ups, pipeline tracking, and reporting.", cta: "Learn More", link: "/Solutions/sales-automation"  },
-    { icon: <Workflow className="w-12 h-12" />, title: "CRM & Workflow Automation", description: "Powerful automation that streamlines processes, manages customer data, and eliminates repetitive tasks completely.", cta: "Learn More" },
+    { icon: <Workflow className="w-12 h-12" />, title: "CRM & Workflow Automation", description: "Powerful automation that streamlines processes, manages customer data, and eliminates repetitive tasks completely.", cta: "Learn More",link: "/Solutions/crm-automation"  },
     { icon: <LuBrainCircuit className="w-12 h-12" />, title: "AI Agents", description: "Intelligent chatbots that engage customers 24/7, answer questions instantly, and provide personalized support across all your channels.", cta: "Learn More",link: "/Solutions/ai-Agent" },
-     { icon: <Target className="w-12 h-12" />, title: "Lead Qualification", description: "Smart AI that identifies high-quality prospects, scores leads automatically, and routes them to the right team members.", cta: "Learn More" },
+     { icon: <Target className="w-12 h-12" />, title: "Lead Qualification", description: "Smart AI that identifies high-quality prospects, scores leads automatically, and routes them to the right team members.", cta: "Learn More",link: "/Solutions/leadQualification"},
     { icon: <Calendar className="w-12 h-12" />, title: "Appointment Booking", description: "Automated scheduling system that books meetings, sends confirmations, and syncs with your calendar effortlessly.", cta: "Book a Demo",link: "/booking" }, 
   ];
 

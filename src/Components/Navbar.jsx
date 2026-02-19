@@ -6,7 +6,7 @@ import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { TbWorldSearch } from "react-icons/tb";
 import { LuWorkflow } from "react-icons/lu";
 import ThemeToggle from "../ThemeToggle";
-import { MdOutlineHealthAndSafety, MdOutlineRealEstateAgent } from "react-icons/md";
+import { MdOutlineHealthAndSafety, MdOutlineLeaderboard, MdOutlineRealEstateAgent } from "react-icons/md";
 import { BsBank } from "react-icons/bs";
 import { PiStudent } from "react-icons/pi";
 import { FaClinicMedical, FaCubes } from "react-icons/fa";
@@ -30,9 +30,9 @@ export default function Navbar() {
       name: "Solutions",
       dropdown: [
         { label: "Sales  Automation", icon: <TbWorldSearch />, path: "/Solutions/sales-automation" },
-        { label: "AI Workflow & Operations", icon: <LuWorkflow />, path: "/Solutions/workflow" },
-        { label: "CRM & Workflow Automation", icon: <LuWorkflow />, path: "" },
+        { label: "CRM & Workflow Automation", icon: <LuWorkflow />, path: "/Solutions/crm-automation" },
         { label: "AI Agents", icon: <HiOutlineDesktopComputer />, path: "/Solutions/ai-agent" },
+        { label: "Lead Qualification", icon: <MdOutlineLeaderboard />, path: "/Solutions/leadQualification" },
       ],
     },
     {
