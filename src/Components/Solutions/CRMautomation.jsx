@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaCog, FaRobot, FaChartBar, FaHandshake } from 'react-icons/fa';
 import crm from '../../assets/lottiefiles/crm.json'
+import Automation from '../../assets/CRM/Automation Deployment.svg'
+import Continuous from '../../assets/CRM/Continuous Optimization.svg'
+import Process from '../../assets/CRM/Process Audit.svg'
+import WorkflowDesign from '../../assets/CRM/Workflow Design.svg'
 import aWorkflow from '../../assets/lottiefiles/Automated Workflows.json'
 import Lottie from 'lottie-react';
 
@@ -10,7 +14,7 @@ const CRMautomation = () => {
     return (
         <div className="min-h-screen bg-linear-to-br from-white via-cyan-50/30 to-white text-slate-800 overflow-hidden">
       {/* Hero Section */}
-<section className="max-w-6xl mx-auto text-center mt-22 px-6">
+<section className="max-w-6xl mx-auto text-center mt-25 px-6">
   <motion.h1
     initial={{ opacity: 0, y: -30 }}
     animate={{ opacity: 1, y: 0 }}
@@ -76,17 +80,22 @@ const CRMautomation = () => {
         <h2 className="text-3xl font-bold text-center text-blue-600">Our Implementation Framework</h2>
         <div className="mt-12 grid md:grid-cols-4 gap-8">
           {[
-            { icon: FaCog, title: '1. Process Audit', desc: 'Analyze your workflows to identify automation opportunities.' },
-            { icon: FaRobot, title: '2. Workflow Design', desc: 'Map out logic, triggers, and process rules.' },
-            { icon: FaChartBar, title: '3. Automation Deployment', desc: 'Implement tasks, email triggers, and segmentation.' },
-            { icon: FaHandshake, title: '4. Continuous Optimization', desc: 'Track results and refine workflows for peak performance.' },
+            { icon: Process, title: '1. Process Audit', desc: 'Analyze your workflows to identify automation opportunities.' },
+            { icon: WorkflowDesign, title: '2. Workflow Design', desc: 'Map out logic, triggers, and process rules.' },
+            { icon: Automation, title: '3. Automation Deployment', desc: 'Implement tasks, email triggers, and segmentation.' },
+            { icon: Continuous, title: '4. Continuous Optimization', desc: 'Track results and refine workflows for peak performance.' },
           ].map((step, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 1.05 }}
               className="p-6 bg-white rounded-2xl shadow-lg border border-slate-100 text-center"
             >
-              <step.icon className="text-3xl text-cyan-600 mx-auto mb-3" />
+              
+              <img
+            src={step.icon}
+            alt={step.title}
+            className="w-12 h-12 mx-auto mb-3"
+          />
               <h4 className="font-semibold text-slate-800">{step.title}</h4>
               <p className="text-sm text-slate-600 mt-2">{step.desc}</p>
             </motion.div>

@@ -1,15 +1,18 @@
 import React from "react";
-import { Layers, Box, MessageCircle, Mic, MessageSquare, Phone } from "lucide-react";
+import { Layers, Box, MessageCircle, Mic } from "lucide-react";
 import { motion } from "framer-motion";
 import aiBot from "../../assets/Ai Agent/Ai.png";
 import BrandSlider from "../BrandSlider";
+import sms from "../../assets/Ai Agent/sms.svg";
+import chat from "../../assets/Ai Agent/chat.svg";
+import voice from "../../assets/Ai Agent/voice.svg";
 import card1 from "../../assets/Ai Agent/card 1.png";
 import card2 from "../../assets/Ai Agent/card 2.png";
 
 const AiAgent = () => {
   const agents = [
     {
-      icon: MessageSquare,
+      icon: chat,
       title: "AI Chat Agent",
       points: [
         "Engages website visitors instantly",
@@ -19,7 +22,7 @@ const AiAgent = () => {
       ],
     },
     {
-      icon: Phone,
+      icon: voice,
       title: "AI Voice Agent",
       points: [
         "Handles inbound calls 24/7",
@@ -29,7 +32,7 @@ const AiAgent = () => {
       ],
     },
     {
-      icon: MessageCircle,
+      icon: sms,
       title: "AI SMS Agent",
       points: [
         "Instant SMS follow-ups",
@@ -235,8 +238,9 @@ const AiAgent = () => {
                 }}
               >
                 <div className="mb-6">
-                  <div className="bg-blue-500 p-2 rounded-lg inline-block">
-                    <agent.icon className="w-6 h-6 text-white" />
+                  <div className="  inline-block">
+                    
+                    <img src={agent.icon} alt={agent.title} className="w-12 h-12" />
                   </div>
                 </div>
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">{agent.title}</h2>

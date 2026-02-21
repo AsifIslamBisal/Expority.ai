@@ -1,19 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
-import { CiMedicalCase } from "react-icons/ci";
-import { FiTarget, FiUsers } from "react-icons/fi";
-import { IoSettingsOutline } from "react-icons/io5";
-import { MdElectricBolt, MdOutlineSupportAgent } from "react-icons/md";
-import { TfiStatsUp } from "react-icons/tfi";
+import CoachesConsultants from '../../assets/Services/Coaches & Consultants.svg'
+import Agencies from '../../assets/Services/Agencies & Service Businesses.svg'
+import HomeServices from '../../assets/Services/Home Services.svg'
+import LegalFinancial from '../../assets/Services/Legal & Financial Firms.svg'
+import RealEstateMortgage from '../../assets/Services/Real Estate & Mortgage.svg'
+import HighTicket from '../../assets/Services/High-Ticket Sales.svg'
+import MedicalWellness from '../../assets/Services/Medical & Wellness.svg'
 
 const Services = () => {
   const items = [
-    { icon: <FiUsers />, title: "Coaches & Consultants" },
-    { icon: <MdOutlineSupportAgent />, title: "Agencies & Service Businesses" },
-    { icon: <IoSettingsOutline />, title: "Home Services" },
-    { icon: <TfiStatsUp />, title: "Legal & Financial Firms" },
-    { icon: <FiTarget />, title: "Real Estate & Mortgage" },
-    { icon: <MdElectricBolt />, title: "High-Ticket Sales" },
-    { icon: <CiMedicalCase />, title: "Medical & Wellness" },
+    { icon: CoachesConsultants, title: "Coaches & Consultants" },
+    { icon: Agencies, title: "Agencies & Service Businesses" },
+    { icon: HomeServices, title: "Home Services" },
+    { icon: LegalFinancial, title: "Legal & Financial Firms" },
+    { icon: RealEstateMortgage, title: "Real Estate & Mortgage" },
+    { icon: HighTicket, title: "High-Ticket Sales" },
+    { icon: MedicalWellness, title: "Medical & Wellness" },
   ];
 
   const sectionRef = useRef(null);
@@ -89,7 +91,11 @@ const Services = () => {
               }}
             >
               <div className="p-2 md:p-4 bg-blue-100 rounded-xl text-xl md:text-3xl text-blue-600 transition-all duration-300 group-hover:bg-linear-to-br group-hover:from-blue-400 group-hover:via-blue-300 group-hover:to-transparent group-hover:text-white group-hover:rotate-6 group-hover:translate-x-2">
-                {item.icon}
+                <img
+          src={item.icon}
+          alt={item.title}
+          className="w-10 h-10 md:w-12 md:h-12 object-contain"
+        />
               </div>
               <p className="font-medium text-gray-900 text-[10px] md:text-base text-center md:text-left transition-colors duration-300 group-hover:text-gray-800">
                 {item.title}
@@ -112,7 +118,11 @@ const Services = () => {
               }}
             >
               <div className="p-2 md:p-4 bg-blue-100 rounded-xl text-xl md:text-3xl text-blue-600 transition-all duration-300 group-hover:bg-linear-to-br group-hover:from-blue-400 group-hover:via-blue-300 group-hover:to-transparent group-hover:text-white group-hover:rotate-6 group-hover:translate-x-2">
-                {item.icon}
+                <img
+          src={item.icon}
+          alt={item.title}
+          className="w-10 h-10 md:w-12 md:h-12 object-contain"
+        />
               </div>
               <p className="font-medium text-gray-900 text-[10px] md:text-base text-center md:text-left transition-colors duration-300 group-hover:text-gray-800">
                 {item.title}

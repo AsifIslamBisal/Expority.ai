@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import { LuBrainCircuit } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
 import { GrUserSettings } from 'react-icons/gr';
+import SalesAutomation from '../../assets/Services/Sales Automation.svg'
+import CRMWorkflow from '../../assets/Services/CRM & Workflow Automation.svg'
+import AIAgents from '../../assets/Services/AI Agents.svg'
+import LeadQualification from '../../assets/Services/Lead Qualification.svg'
+import AppointmentBooking from '../../assets/Services/Appointment Booking.svg'
+
 
 const FeatureCardsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,11 +19,11 @@ const FeatureCardsSlider = () => {
   const navigate = useNavigate()
 
   const features = [
-    { icon: <GrUserSettings className="w-12 h-12" />, title: "Sales Automation", description: "Sales Automation is the use of technology to automate repetitive sales tasks like lead capture, follow-ups, pipeline tracking, and reporting.", cta: "Learn More", link: "/Solutions/sales-automation"  },
-    { icon: <Workflow className="w-12 h-12" />, title: "CRM & Workflow Automation", description: "Powerful automation that streamlines processes, manages customer data, and eliminates repetitive tasks completely.", cta: "Learn More",link: "/Solutions/crm-automation"  },
-    { icon: <LuBrainCircuit className="w-12 h-12" />, title: "AI Agents", description: "Intelligent chatbots that engage customers 24/7, answer questions instantly, and provide personalized support across all your channels.", cta: "Learn More",link: "/Solutions/ai-Agent" },
-     { icon: <Target className="w-12 h-12" />, title: "Lead Qualification", description: "Smart AI that identifies high-quality prospects, scores leads automatically, and routes them to the right team members.", cta: "Learn More",link: "/Solutions/leadQualification"},
-    { icon: <Calendar className="w-12 h-12" />, title: "Appointment Booking", description: "Automated scheduling system that books meetings, sends confirmations, and syncs with your calendar effortlessly.", cta: "Book a Demo",link: "/booking" }, 
+    { icon: SalesAutomation, title: "Sales Automation", description: "Sales Automation is the use of technology to automate repetitive sales tasks like lead capture, follow-ups, pipeline tracking, and reporting.", cta: "Learn More", link: "/Solutions/sales-automation"  },
+    { icon: CRMWorkflow, title: "CRM & Workflow Automation", description: "Powerful automation that streamlines processes, manages customer data, and eliminates repetitive tasks completely.", cta: "Learn More",link: "/Solutions/crm-automation"  },
+    { icon: AIAgents, title: "AI Agents", description: "Intelligent chatbots that engage customers 24/7, answer questions instantly, and provide personalized support across all your channels.", cta: "Learn More",link: "/Solutions/ai-Agent" },
+     { icon: LeadQualification, title: "Lead Qualification", description: "Smart AI that identifies high-quality prospects, scores leads automatically, and routes them to the right team members.", cta: "Learn More",link: "/Solutions/leadQualification"},
+    { icon: AppointmentBooking, title: "Appointment Booking", description: "Automated scheduling system that books meetings, sends confirmations, and syncs with your calendar effortlessly.", cta: "Book a Demo",link: "/booking" }, 
   ];
 
   const handleCtaClick = (feature) =>{
@@ -107,7 +113,11 @@ const FeatureCardsSlider = () => {
               >
                 <div className={`${hoveredCard === index ? 'bg-white' : 'bg-blue-100'} w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto`}>
                   <div className={hoveredCard === index ? 'text-cyan-400' : 'text-blue-600'}>
-                    {feature.icon}
+                    <img
+    src={feature.icon}
+    alt={feature.title}
+    className="w-10 h-10 object-contain"
+  />
                   </div>
                 </div>
                 <h3 className={`text-xl font-semibold mb-4 text-center ${hoveredCard === index ? 'text-gray-900' : 'text-gray-800'}`}>
@@ -153,7 +163,11 @@ const FeatureCardsSlider = () => {
                   className="bg-white rounded-2xl p-8 shadow-md border border-cyan-50 text-center"
                 >
                   <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <div className="text-blue-600">{feature.icon}</div>
+                    <div className="text-blue-600"><img
+    src={feature.icon}
+    alt={feature.title}
+    className="w-10 h-10 object-contain"
+  /></div>
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-gray-800">{feature.title}</h3>
                   <p className="text-xs text-gray-600 mb-6">{feature.description}</p>

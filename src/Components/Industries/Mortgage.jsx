@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { motion, useInView, useSpring, useTransform } from 'framer-motion';
-import image1 from '../../assets/Mortgage/image 1.png';
-import image2 from '../../assets/Mortgage/image 2.png';
+import image1 from '../../assets/Mortgage/1.png';
+import image2 from '../../assets/Mortgage/2.png';
 import image3 from '../../assets/Mortgage/image 3.png';
 import image4 from '../../assets/Mortgage/image 4.png';
 import image5 from '../../assets/Mortgage/image 5.png';
 import avatar1 from '../../assets/Mortgage/client testimonial 1.png'; 
 import avatar2 from '../../assets/Mortgage/client testimonial 2.png'; 
 import { PiRainbowThin } from 'react-icons/pi';
-import AgentClientVideo from '../../assets/Mortgage/Agent_Client.mp4';
+import AgentClientVideo from '../../assets/Mortgage/3.mp4';
 import { useNavigate } from 'react-router-dom';
 
 

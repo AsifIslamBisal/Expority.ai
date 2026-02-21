@@ -171,9 +171,9 @@ const About = () => {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-medium transition-colors shadow-lg">
+            <a href="/booking"><button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-medium transition-colors shadow-lg">
               Talk to Our Team
-            </button>
+            </button></a>
           </motion.div>
         </div>
       </section>

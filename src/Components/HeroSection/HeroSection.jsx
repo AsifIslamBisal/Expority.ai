@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import robotImg from "../../assets/Ai Bot.png";
+// import robotImg from "../../assets/1.png";
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
   
@@ -24,6 +26,8 @@ const HeroSection = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <section className="relative bg-linear-to-br from-white via-cyan-50/30 to-white flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-20 py-10 lg:py-0 h-auto lg:h-screen">
@@ -143,6 +147,16 @@ const HeroSection = () => {
             <p className="mt-4 text-sm text-gray-700 leading-relaxed max-w-sm mx-auto lg:ml-20 lg:mx-0 animate-fadeInUp delay-500">
               Expority builds AI-powered agents and automation systems that handle lead engagement, qualification, follow-up, and booking for service-based businesses — 24/7, without adding headcount.
             </p>
+            {/* 👉 CTA Button */}
+    <div className="mt-6 lg:ml-20">
+      <button
+        className="bg-cyan-500 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-cyan-600 transition-transform transform hover:-translate-y-1"
+        onClick={() => navigate("/booking")}
+      >
+        Book a Meeting 
+      </button>
+      
+    </div>
           </div>
         </div>
 
