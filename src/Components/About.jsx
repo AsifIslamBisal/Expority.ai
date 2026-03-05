@@ -159,7 +159,7 @@ const About = () => {
                   {item.icon}
                   <h2 className="text-xl font-bold uppercase">{item.title}</h2>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{item.text}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 grow">{item.text}</p>
                 
               </motion.div>
             ))}
