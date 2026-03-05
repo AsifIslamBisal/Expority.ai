@@ -11,7 +11,16 @@ const MainLayout = () => {
       window.fbq("track", "PageView");
       console.log("Meta Pixel tracked:", location.pathname);
     }
-  }, [location]);
+  
+  //  Google Tag Manager dynamic tracking
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: "page_view",
+        page_path: location.pathname,
+      });
+      console.log("GTM tracked:", location.pathname);
+    }
+  },[location]);
 
   useEffect(() => {
     //  Script load only once

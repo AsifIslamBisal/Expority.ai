@@ -49,7 +49,7 @@ const Agent = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [open]);
 
-  // Scroll animation
+  
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
   useEffect(() => {

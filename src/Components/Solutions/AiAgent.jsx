@@ -55,7 +55,7 @@ const AiAgent = () => {
   };
 
   return (
-    <section className="relative bg-linear-to-br from-white via-cyan-50/30 to-white overflow-hidden mt-10 pb-20">
+    <section className="relative bg-linear-to-br from-white via-cyan-50/30 to-white overflow-hidden mt-18 md:mt-14 pb-20">
       {/* Hero Section */}
       <motion.div
         initial="hidden"

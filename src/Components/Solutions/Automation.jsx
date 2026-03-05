@@ -47,7 +47,7 @@ const Automation = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeUp}
-        className='relative mt-15 md:mt-0'
+        className='relative mt-18 md:mt-0'
       >
         <div className='flex flex-col md:flex-row relative items-center justify-evenly space-y-12 md:space-y-0'>
           {/* Left */}

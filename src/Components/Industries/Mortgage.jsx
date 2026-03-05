@@ -55,7 +55,7 @@ const Mortgage = () => {
     return (
         <section>
             {/* Hero Section */}
-            <div className="min-h-screen bg-linear-to-br from-white via-cyan-50/30 to-white p-8 md:p-16 font-sans overflow-hidden mt-10">
+            <div className="min-h-screen bg-linear-to-br from-white via-cyan-50/30 to-white p-8 md:p-16 font-sans overflow-hidden mt-15">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
                     <motion.div 
@@ -67,7 +67,7 @@ const Mortgage = () => {
                     >
                         <div className="space-y-10">
                             <div className="space-y-1">
-                                <h1 className="text-5xl md:text-6xl font-semibold text-[#3B82F6] leading-tight tracking-tight">AI Automation for</h1>
+                                <h1 className="text-5xl md:text-6xl font-semibold text-[#3B82F6] leading-tight tracking-tight">Sales Automation for</h1>
                                 <h1 className="text-6xl md:text-6xl font-bold text-[#3B82F6] tracking-tight">Mortgage</h1>
                             </div>
 

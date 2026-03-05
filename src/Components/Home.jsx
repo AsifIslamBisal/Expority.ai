@@ -8,6 +8,7 @@ import Contact from './Contact.jsx';
 import Services from './Services/Services.jsx';
 import FeatureCardsSlider from './Services/FeatureCardsSlider.jsx';
 import CalendlyPage from '../Pages/CalendlyPage.jsx';
+import Partner from './Partner.jsx';
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
             <Agent/>
             <Refined/>
             <CalendlyPage/>
+            <Partner/>
         </div>
     );
 };

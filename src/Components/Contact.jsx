@@ -79,7 +79,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-linear-to-br from-white via-cyan-50/30 py-10 md:py-14 px-4 mt-12 overflow-hidden">
+    <div className="bg-linear-to-br from-white via-cyan-50/30 py-10 md:py-14 px-4 mt-20 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-start">
           

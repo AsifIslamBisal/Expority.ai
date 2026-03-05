@@ -3,7 +3,7 @@ import { FaLinkedin } from 'react-icons/fa';
 
 export default function PrivacyPolicy() {
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-white py-30 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <header className="mb-12">

@@ -28,9 +28,9 @@ const About = () => {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        className="relative w-full h-screen bg-white flex flex-col items-center justify-start overflow-hidden font-sans mt-12"
+        className="relative w-full h-screen bg-white flex flex-col items-center justify-start overflow-hidden font-sans mt-18 md:mt-14"
       >
-        <div className="absolute top-10 md:top-10 flex flex-col items-center pointer-events-none z-0 w-full">
+        <div className="absolute top-10 md:top-15 flex flex-col items-center pointer-events-none z-0 w-full">
           <h1 className="text-center font-bold text-[#DDEBFF] leading-[0.8] select-none">
             <span className="text-[8vw] md:text-[8vw] block">WE ARE</span>
             <span className="text-[8vw] md:text-[8vw] block">YOUR SALES PARTNER</span>

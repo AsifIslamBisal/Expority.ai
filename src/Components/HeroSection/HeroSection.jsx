@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import robotImg from "../../assets/Ai Bot.png";
-// import robotImg from "../../assets/1.png";
+import bManImg from "../../assets/1.png";
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
@@ -30,7 +29,7 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative bg-linear-to-br from-white via-cyan-50/30 to-white flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-20 py-10 lg:py-0 h-auto lg:h-screen">
+    <section className="relative bg-linear-to-br from-white via-cyan-50/30 to-white flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-20 py-10 pt-20 lg:pt-32 pb-10  h-auto lg:h-screen">
       
       {/* Background elements */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl animate-pulse"></div>
@@ -38,8 +37,35 @@ const HeroSection = () => {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        {/* Left Section */}
-        <div className="lg:col-span-3 flex flex-col items-center lg:items-start justify-end h-full">
+        {/* Right Section (Text & CTA) - Mobile: Order 1, Desktop: Order 3 (lg:col-span-4) */}
+        <div className="order-1 lg:order-3 lg:col-span-4 space-y-8 text-center lg:text-left pb-5 lg:-ml-10 mt-15 sm:mt-6 lg:-mt-25 animate-fadeInUp delay-400">
+          <div>
+            <h1
+              className="font-bold leading-snug 
+                        bg-linear-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent 
+                        inline-block mx-auto lg:mx-0"
+              style={{ fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)", maxWidth: "fit-content" }}
+            >
+              <span className="block whitespace-nowrap">Turns Conversations</span>
+              <span className="block whitespace-nowrap">Into Revenue</span>
+            </h1>
+
+            <p className="mt-4 text-sm text-gray-700 leading-relaxed max-w-sm mx-auto lg:ml-20 lg:mx-0 animate-fadeInUp delay-500">
+              Expority builds AI-powered agents and automation systems that handle lead engagement, qualification, follow-up, and booking for service-based businesses — 24/7, without adding headcount.
+            </p>
+            <div className="mt-6 lg:ml-20">
+              <button
+                className="bg-cyan-500 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-cyan-600 transition-transform transform hover:-translate-y-1"
+                onClick={() => navigate("/booking")}
+              >
+                Book a Meeting 
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Left Section (Stats) - Mobile: Order 2, Desktop: Order 1 (lg:col-span-3) */}
+        <div className="order-2 lg:order-1 lg:col-span-3 flex flex-col items-center lg:items-start justify-end h-full">
           <div className="hidden sm:block text-center lg:text-left mb-auto mt-15 animate-fadeInUp">
             <div className="inline-flex items-center justify-center w-26 h-20 border-2 border-gray-200 rounded-2xl p-3 mb-4 bg-white shadow-sm animate-bounce-slow">
               <div className="flex items-end justify-center gap-2 h-full">
@@ -58,43 +84,28 @@ const HeroSection = () => {
             </h2>
           </div>
 
-          {/* Stats */}
           <div className="hidden sm:block space-y-6 mt-6">
-            {/* Qualified Lead */}
-            <div
-              className="flex items-baseline gap-3 justify-center lg:justify-start animate-fadeInUp"
-              style={{ animationDelay: "0.4s" }}
-            >
+            <div className="flex items-baseline gap-3 justify-center lg:justify-start animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
               <div className="w-2 h-2 rounded-full bg-gray-800 mt-2"></div>
               <div>
-                <p className="text-xs text-gray-500 mb-1 uppercase tracking-wider">
-                  Qualified Lead
-                </p>
-                <h2 className="text-5xl md:text-6xl text-gray-900">
-                  {leadCount}%
-                </h2>
+                <p className="text-xs text-gray-500 mb-1 uppercase tracking-wider">Qualified Lead</p>
+                <h2 className="text-5xl md:text-6xl text-gray-900">{leadCount}%</h2>
               </div>
             </div>
 
-            {/* Reach (Static) */}
-            <div
-              className="flex items-baseline gap-3 justify-center lg:justify-start animate-fadeInUp"
-              style={{ animationDelay: "0.6s" }}
-            >
+            <div className="flex items-baseline gap-3 justify-center lg:justify-start animate-fadeInUp" style={{ animationDelay: "0.6s" }}>
               <div className="w-2 h-2 rounded-full bg-gray-800 mt-2"></div>
               <div>
-                <p className="text-xs text-gray-500 mb-1 uppercase tracking-wider">
-                  Reach
-                </p>
+                <p className="text-xs text-gray-500 mb-1 uppercase tracking-wider">Reach</p>
                 <h2 className="text-5xl md:text-6xl text-gray-900">1M+</h2>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Center Section */}
-        <div className="lg:col-span-5 flex items-center justify-center relative">
-          <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl -mt-10 lg:-mt-20 lg:ml-8">
+        {/* Center Section (Image) - Mobile: Order 3, Desktop: Order 2 (lg:col-span-5) */}
+        <div className="order-3 lg:order-2 lg:col-span-5 flex items-center justify-center relative">
+          <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl mt-10 lg:mt-20 lg:ml-8">
             <style>
               {`
                 @keyframes float {
@@ -120,43 +131,11 @@ const HeroSection = () => {
             </style>
             <div className="relative animate-fadeInUp delay-300">
               <img 
-                src={robotImg}
+                src={bManImg}
                 alt="AI Robot" 
                 className="w-full h-auto scale-105 floating"
               />
-              {/* Shadow */}
-              <div className="absolute bottom-[-18px] left-0 right-0 h-28 bg-linear-to-t from-white via-white/95 to-transparent"></div>
-              <div className="absolute bottom-[-10px] left-0 right-0 h-24 bg-linear-to-t from-cyan-50/60 via-white/90 to-transparent blur-[45px] opacity-70"></div>
             </div>
-          </div>
-        </div>
-
-        {/* Right Section */}
-        <div className="lg:col-span-4 space-y-8 text-center lg:text-left pb-5 lg:-ml-10 mt-4 sm:mt-6 lg:-mt-36 animate-fadeInUp delay-400">
-          <div>
-            <h1
-              className="font-bold leading-snug 
-                        bg-linear-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent 
-                        inline-block mx-auto lg:mx-0"
-              style={{ fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)", maxWidth: "fit-content" }}
-            >
-              <span className="block whitespace-nowrap">Turns Conversations</span>
-              <span className="block whitespace-nowrap">Into Revenue</span>
-            </h1>
-
-            <p className="mt-4 text-sm text-gray-700 leading-relaxed max-w-sm mx-auto lg:ml-20 lg:mx-0 animate-fadeInUp delay-500">
-              Expority builds AI-powered agents and automation systems that handle lead engagement, qualification, follow-up, and booking for service-based businesses — 24/7, without adding headcount.
-            </p>
-            {/* 👉 CTA Button */}
-    <div className="mt-6 lg:ml-20">
-      <button
-        className="bg-cyan-500 text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-cyan-600 transition-transform transform hover:-translate-y-1"
-        onClick={() => navigate("/booking")}
-      >
-        Book a Meeting 
-      </button>
-      
-    </div>
           </div>
         </div>
 

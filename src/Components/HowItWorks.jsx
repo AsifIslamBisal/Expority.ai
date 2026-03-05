@@ -37,7 +37,7 @@ const staggerContainer = {
 
 const HowItWorks = () => {
   return (
-    <div className="bg-linear-to-br from-white via-cyan-50/30 to-white overflow-hidden mt-10">
+    <div className="bg-linear-to-br from-white via-cyan-50/30 to-white overflow-hidden mt-15">
 
       {/* ----------- HERO SECTION ----------- */}
       <section className="relative w-full h-[80vh] flex flex-col items-center justify-center text-center overflow-hidden">
