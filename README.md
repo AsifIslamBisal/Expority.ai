@@ -1,16 +1,32 @@
-# React + Vite
+🚀 Expority — Digital Marketing & Growth Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website: https://expority.com
 
-Currently, two official plugins are available:
+🌐 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Expority is a contemporary digital marketing platform that enables business growth through intelligent branding, automation, and web development.
 
-## React Compiler
+✨ Key Features
+🧭 1. Brand Strategy & Communication
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Develops a strong brand identity for businesses that is consistent, strong, and unique.
 
-## Expanding the ESLint configuration
+💻 2. Web Design & Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Designs professional business websites that convert through clean user interface and user experience.
+
+📈 3. Digital Marketing
+
+Provides SEO, paid advertising, and social media strategies to enhance online presence.
+
+🤖 4. Marketing Automation
+
+Facilitates the automation of lead generation, lead nurturing, and customer engagement through AI technology.
+
+🎨 5. Creative Design & Motion Graphics
+
+Provides stunning creative designs to enhance brand storytelling through motion graphics.
+
+🔗 Learn More
+
+👉 Visit Expority.com to learn more about the services provided by the platform.
